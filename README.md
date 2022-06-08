@@ -19,7 +19,7 @@ The control files for each site in the examples assume a particular folder struc
 
 The screenshot below shows the default folder structure used in the example files.
 
-![](/home/peter/Examples/folder_structure.png)
+![](folder_structure.png)
 
 The main points are:
 
