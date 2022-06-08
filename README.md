@@ -50,14 +50,14 @@ To run the L1 processing for Loxton, follow these steps:
    3. Linux;
       1. You know what to do ...
 2. When the PyFluxPro GUI opens, use the **File/Open** menu option to open the Loxton L1 control file (L1.txt), see the screenshot below;
-   ![](/home/peter/Examples/file_open_loxton_l1.png)
+   ![](file_open_loxton_l1.png)
 3. Once the Loxton L1 control file has loaded in the GUI, take a few minutes to review its contents.  The PyFluxPro wiki entry on L1 (see https://github.com/OzFlux/PyFluxPro/wiki/Level-1) has a description of the L1 control file contents.  Below is a screenshot of the Loxton L1 control file loaded into the GUI.
-   ![](/home/peter/Examples/loxton_l1_open_in_gui.png)
+   ![](loxton_l1_open_in_gui.png)
 4. If you have followed the folder structure suggested above then this control file will run without changes.  If you have used a different folder structure, you will need to change the **file_path** entry in the **Files** section so that is refers to the folder containing the Loxton L1 workbook.  A right click on the **file_path** entry (in the **Value** column) will allow you to browse to the appropriate folder.
 5. To run the L1 processing for Loxton, use the **Run/Current** menu option, see below:
-   ![](/home/peter/Examples/loxton_l1_run_current.png)
+   ![](loxton_l1_run_current.png)
 6. If the Loxton L1 processing runs successfully, you should see the output below:
-   ![](/home/peter/Examples/loxton_l1_run_output.png)
+   ![](loxton_l1_run_output.png)
 
 That's it, you're all done for Loxton L1.  Now try the same process for Loxton L2 to L3.  Then try **Utilities/Climatology** and **Utilities/u* threshold/CPD (McHugh)** to run the climatology (needed for L4) and the CPD u* threshold detection routine (needed for L5).  Then run L4 to L6.  Try the other example sites, they all do something different that displays the various features of PyFlyxPro.
 
