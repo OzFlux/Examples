@@ -56,6 +56,6 @@ To run the L1 processing for Loxton, follow these steps:
 6. If the Loxton L1 processing runs successfully, you should see the output below:
    ![](images/loxton_l1_run_output.png?raw=true)
 
-That's it, you're all done for Loxton L1.  Now try the same process for Loxton L2 to L3.  Then try **Utilities/Climatology** and **Utilities/u* threshold/CPD (McHugh)** to run the climatology (needed for L4) and the CPD u* threshold detection routine (needed for L5).  Then run L4 to L6.  Try the other example sites, they all do something different that displays the various features of PyFlyxPro.
+That's it, you're all done for Loxton L1.  Now try the same process for Loxton L2 to L3.  Then try **Utilities/Climatology** and **Utilities/u\* threshold/CPD (McHugh)** to run the climatology (needed for L4) and the CPD u* threshold detection routine (needed for L5).  Then run L4 to L6.  Try the other example sites, they all do something different that displays the various features of PyFlyxPro.
 
 The PyFluxPro Wiki, see https://github.com/OzFlux/PyFluxPro/wiki, has more information on the processing.
