@@ -5,10 +5,11 @@ The repository contains files for 3 TERN Ecosystem Processes/OzFlux sites; Calpe
 
 ## Downloading
 
-1. The easiest way to download the example files is to clone this repository using **git**.  This is the same method suggested for installing PyFluxPro.  The process is as follows:
-   1. Open a command line window or terminal session and use the **cd** (shorthand for "change directory") command to navigate to the directory into which you want to install the example folders. Note that the installation process will create a folder called **Examples** in the directory where the installation is run.
-   2. Clone the **Examples** repository by typing **git clone https://github.com/OzFlux/Examples.git** at the command prompt.
-   3. This process will create a folder called **Examples** in the current folder.  The **Examples** folder itself contains 4 folders, 1 for each example site (**Calperum**, **Cumberland Plain** and **Loxton**) and 1 called **controlfiles**.
+The easiest way to download the example files is to clone this repository using git. This is the same method suggested for installing PyFluxPro. The process is as follows:
+
+1. Open a command line window or terminal session and use the **cd** (shorthand for "change directory") command to navigate to the directory into which you want to install the example folders. Note that the installation process will create a folder called **Examples** in the directory where the installation is run.
+2. Clone the **Examples** repository by typing **git clone https://github.com/OzFlux/Examples.git** at the command prompt.
+3. This process will create a folder called **Examples** in the current folder. The **Examples** folder itself contains 4 folders, 1 for each example site (**Calperum**, **Cumberland Plain** and **Loxton**) and 1 called **controlfiles**.
 
 ## Using the Examples
 
