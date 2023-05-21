@@ -1,0 +1,18 @@
+level = cpd_barr
+[Files]
+    file_path = ../Examples/Loxton/Data/Tower/
+    in_filename = Loxton_L3.nc
+    out_filename = Loxton_L3_CPD_Barr.xlsx
+    plot_path = ../Examples/Loxton/Plots/
+[Options]
+    Fsd_threshold = 5
+    Num_bootstraps = 100
+[Variables]
+    [[Fco2]]
+        name = Fco2
+    [[Ta]]
+        name = Ta
+    [[ustar]]
+        name = ustar
+    [[Fsd]]
+        name = Fsd

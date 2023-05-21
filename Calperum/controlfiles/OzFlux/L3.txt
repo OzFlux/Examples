@@ -1,0 +1,134 @@
+level = L3
+[Files]
+    file_path = ../Examples/Calperum/Data/OzFlux/2016/
+    in_filename = Calperum_2016_L2.nc
+    out_filename = Calperum_2016_L3.nc
+    plot_path = ../Examples/Calperum/Plots/
+[Options]
+    CO2Units = umol/mol
+    Fco2Units = umol/m^2/s
+    MassmanCorrection = Yes
+    2DCoordRotation = Yes
+    CalculateFluxes = Yes
+    ApplyWPL = Yes
+[Soil]
+    BulkDensity = 1600
+    FgDepth = 0.08
+    OrganicContent = 0.01
+    SwsDefault = 0.1
+    SwsSeries = Sws_10cma
+[Massman]
+    CSATarm = 0.52
+    IRGAarm = 0.38
+    angle = 26.35
+    z0 = 0.368
+    zmd = 18
+[Variables]
+    [[AH]]
+        [[[MergeSeries]]]
+            source = AH_HMP_2m,AH_IRGA_Av
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 25.0
+    [[CO2]]
+        [[[MergeSeries]]]
+            source = CO2_IRGA_Av
+            standard_name = notdefined
+        [[[RangeCheck]]]
+            lower = 250.0
+            upper = 900.0
+    [[Fco2]]
+        [[[RangeCheck]]]
+            lower = -50.0
+            upper = 50.0
+    [[Fe]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 600.0
+    [[Fg]]
+        [[[AverageSeries]]]
+            source = Fg_8cma,Fg_8cmb,Fg_8cmc
+        [[[RangeCheck]]]
+            lower = -300.0
+            upper = 300.0
+    [[Fh]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 600.0
+    [[Fm]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[Fn]]
+        [[[MergeSeries]]]
+            source = Fn_4cmpt
+        [[[RangeCheck]]]
+            lower = -150.0
+            upper = 1100.0
+    [[Fsd]]
+        [[[MergeSeries]]]
+            source = Fsd,Fsd_Li
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 1500.0
+    [[Sws]]
+        [[[AverageSeries]]]
+            source = Sws_10cma,Sws_10cmb,Sws_10cmc
+    [[Sws_100cm]]
+        [[[AverageSeries]]]
+            source = Sws_100cma,Sws_100cmb,Sws_100cmc
+    [[Sws_180cm]]
+        [[[AverageSeries]]]
+            source = Sws_180cma,Sws_180cmb,Sws_180cmc
+    [[Sws_25cm]]
+        [[[AverageSeries]]]
+            source = Sws_25cma,Sws_25cmb,Sws_25cmc
+    [[Sws_50cm]]
+        [[[AverageSeries]]]
+            source = Sws_50cma,Sws_50cmb,Sws_50cmc
+    [[Ta]]
+        [[[MergeSeries]]]
+            source = Ta_HMP_2m,Ta_SONIC_Av
+        [[[RangeCheck]]]
+            lower = -5.0
+            upper = 50.0
+    [[Ts]]
+        [[[AverageSeries]]]
+            source = Ts_8cma,Ts_8cmb,Ts_8cmc
+    [[Wd]]
+        [[[MergeSeries]]]
+            source = Wd_RMY_10m,Wd_SONIC_Av,Wd_RMY_2m
+            standard_name = notdefined
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Ws]]
+        [[[MergeSeries]]]
+            source = Ws_RMY_10m,Ws_SONIC_Av,Ws_RMY_2m
+            standard_name = notdefined
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 30.0
+    [[ustar]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 2.0
+[Plots]
+    [[Radiative fluxes]]
+        variables = Fsd,Fsu,Fld,Flu,Fn
+    [[Turbulent fluxes]]
+        variables = Fh,Fe,Fco2,ustar,Fm
+    [[Air temperature, humidity and CO2]]
+        variables = Ta,AH,CO2,Precip
+    [[Soil temperature, water content and heat flux]]
+        variables = Ts,Sws,Fg,Precip
+    [[Pressure, wind speed and direction]]
+        variables = ps,Ws_SONIC_Av,Ux_SONIC_Av,Uy_SONIC_Av,Uz_SONIC_Av,Wd
+    [[Fc, precip and ppm]]
+        variables = Fco2,Precip,CO2
+    [[Fh diagnostics]]
+        variables = Fh,UzT,Diag_SONIC,Diag_IRGA,AGC_IRGA,AH_IRGA_Sd,CO2_IRGA_Sd
+    [[Fe diagnostics]]
+        variables = Fe,UzA,Diag_SONIC,Diag_IRGA,AGC_IRGA,AH_IRGA_Sd,CO2_IRGA_Sd
+    [[Fco2 diagnostics]]
+        variables = Fco2,UzC,Diag_SONIC,Diag_IRGA,AGC_IRGA,AH_IRGA_Sd,CO2_IRGA_Sd

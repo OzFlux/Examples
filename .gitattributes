@@ -1,1 +1,4 @@
-*.zip filter=lfs diff=lfs merge=lfs -text
+Calperum/* filter=lfs diff=lfs merge=lfs -text
+CumberlandPlain/* filter=lfs diff=lfs merge=lfs -text
+controlfiles/* filetr=lfs diff=lfs merge=lfe -text
+Loxton/* filter=lfs diff=lfs merge=lfs -text

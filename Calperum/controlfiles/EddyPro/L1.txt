@@ -1,0 +1,448 @@
+level = L1
+[Files]
+    file_path = ../Examples/Calperum/Data/EddyPro/2016/
+    in_filename = Calperum_2016_L1.xls
+    in_firstdatarow = 4
+    in_headerrow = 2
+    out_filename = Calperum_2016_L1.nc
+[Global]
+    Conventions = CF-1.8
+    acknowledgement = '''This work used eddy covariance data collected by the TERN Ecosystem 
+Processes facility. Ecosystem Processes would like to acknowledge the financial support of the 
+Australian Federal Government via the National Collaborative Research Infrastructure Scheme 
+and the Education Investment Fund.'''
+    altitude = 62m
+    canopy_height = 3m eucalyptus, 0.7 grass
+    contact = ozfluxtech@adelaide.edu.au
+    data_link = http://data.ozflux.org.au/
+    featureType = timeSeries
+    fluxnet_id = 
+    history = June 2021 processing
+    institution = University of Adelaide
+    latitude = -34.00206
+    license = https://creativecommons.org/licenses/by/4.0/
+    license_name = CC BY 4.0
+    longitude = 140.58912
+    metadata_link = http://www.ozflux.org.au/monitoringsites/calperum/index.html
+    ozflux_link = http://ozflux.org.au/
+    publisher_name = TERN Ecosystem Processes,OzFlux
+    site_name = Calperum
+    site_pi = Wayne Meyer
+    soil = Reddish brown, yellowish red, loamy sand, free grain structure; low organic matter, loose consistence; pH 6
+    source = 20m flux tower plus array of soil sensors
+    time_step = 30
+    time_zone = Australia/Adelaide
+    title = Flux tower data set from the Calperum site for the calendar year 2016
+    tower_height = 20m
+    vegetation = Mallee
+[Variables]
+    [[CO2_IRGA_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Li-7500A
+            long_name = CO2 concentration
+            standard_name = mole_fraction_of_carbon_dioxide_in_air
+            statistic_type = average
+            units = umol/mol
+        [[[xl]]]
+            name = co2_mixing_ratio
+            sheet = full_output
+    [[CO2_IRGA_Vr]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Li-7500A
+            long_name = CO2 concentration
+            statistic_type = variance
+            units = umol^2/mol^2
+        [[[xl]]]
+            name = co2_var
+            sheet = full_output
+    [[Fco2]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3,Li-7500A
+            long_name = CO2 flux
+            standard_name = surface_upward_mole_flux_of_carbon_dioxide
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = co2_flux
+            sheet = full_output
+    [[Fco2_EP_QC]]
+        [[[Attr]]]
+            instrument = CSAT3,Li-7500A
+            long_name = CO2 flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_co2_flux
+            sheet = full_output
+    [[Fe]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3,Li-7500A
+            long_name = Latent heat flux
+            standard_name = surface_upward_latent_heat_flux
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = LE
+            sheet = full_output
+    [[Fe_EP_QC]]
+        [[[Attr]]]
+            instrument = CSAT3,Li-7500A
+            long_name = Latent heat flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_LE
+            sheet = full_output
+    [[Fg]]
+        [[[Attr]]]
+            height = -0.08m
+            instrument = Huskeflux HFP01
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = SHF_1_1_1
+            sheet = biomet
+    [[Fh]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Sensible heat flux
+            standard_name = surface_upward_sensible_heat_flux
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = H
+            sheet = full_output
+    [[Fh_EP_QC]]
+        [[[Attr]]]
+            instrument = CSAT3
+            long_name = Sensible heat flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_H
+            sheet = full_output
+    [[Fld]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Kipp and Zonen CNR1
+            long_name = Down-welling longwave radiation
+            standard_name = surface_downwelling_longwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = LWin_1_1_1
+            sheet = biomet
+    [[Flu]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Kipp and Zonen CNR1
+            long_name = Up-welling longwave radiation
+            standard_name = surface_upwelling_longwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = LWout_1_1_1
+            sheet = biomet
+    [[Fm]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Momentum flux
+            standard_name = magnitude_of_surface_downward_stress
+            statistic_type = average
+            units = kg/m/s^2
+        [[[xl]]]
+            name = Tau
+            sheet = full_output
+    [[Fm_EP_QC]]
+        [[[Attr]]]
+            instrument = CSAT3
+            long_name = Momentum flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_Tau
+            sheet = full_output
+    [[Fn]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Kipp and Zonen CNR1
+            long_name = Net radiation
+            standard_name = surface_net_downward_radiative_flux
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rn_1_1_1
+            sheet = biomet
+    [[Fsd]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Kipp and Zonen CNR1
+            long_name = Down-welling shortwave radiation
+            standard_name = surface_downwelling_shortwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = SWin_1_1_1
+            sheet = biomet
+    [[Fsu]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Kipp and Zonen CNR1
+            long_name = Up-welling shortwave radiation
+            standard_name = surface_upwelling_shortwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = SWout_1_1_1
+            sheet = biomet
+    [[H2O_IRGA_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Li-7500A
+            long_name = H2O concentration
+            standard_name = mole_fraction_of_water_vapor_in_air
+            statistic_type = average
+            units = mmol/mol
+        [[[xl]]]
+            name = h2o_mixing_ratio
+            sheet = full_output
+    [[H2O_IRGA_Vr]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Li-7500A
+            long_name = H2O concentration
+            statistic_type = variance
+            units = mmol^2/mol^2
+        [[[xl]]]
+            name = h2o_var
+            sheet = full_output
+    [[Precip]]
+        [[[Attr]]]
+            height = 0.6m
+            instrument = Hydrological Services CS7000
+            long_name = Rainfall
+            standard_name = thickness_of_rainfall_amount
+            statistic_type = sum
+            units = mm
+        [[[xl]]]
+            name = P_1_1_1
+            sheet = biomet
+    [[RH_HMP_2m]]
+        [[[Attr]]]
+            height = 2m
+            instrument = HMP45C
+            long_name = Relative humidity
+            standard_name = relative_humidity
+            statistic_type = average
+            units = percent
+        [[[xl]]]
+            name = RH_1_1_1
+            sheet = biomet
+    [[RH_IRGA_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Li-7500A
+            long_name = Relative humidity
+            standard_name = relative_humidity
+            statistic_type = average
+            units = percent
+        [[[xl]]]
+            name = RH
+            sheet = full_output
+    [[Sws]]
+        [[[Attr]]]
+            height = -0.1m
+            instrument = Campbell Scientific CS650
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = SWC_1_1_1
+            sheet = biomet
+    [[Ta_HMP_2m]]
+        [[[Attr]]]
+            height = 2m
+            instrument = HMP45C
+            long_name = Air temperature
+            standard_name = air_temperature
+            statistic_type = average
+            units = K
+        [[[Function]]]
+            func = K_to_C(Ta_HMP_2m)
+        [[[xl]]]
+            name = TA_1_1_1
+            sheet = biomet
+    [[Ts]]
+        [[[Attr]]]
+            height = -0.08m
+            instrument = Campbell Scientific TCAV
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = K
+        [[[Function]]]
+            func = K_to_C(Ts)
+        [[[xl]]]
+            name = TS_1_1_1
+            sheet = biomet
+    [[Tv_SONIC_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Virtual temperature
+            standard_name = virtual_temperature
+            statistic_type = average
+            units = K
+        [[[Function]]]
+            func = K_to_C(Tv_SONIC_Av)
+        [[[xl]]]
+            name = sonic_temperature
+            sheet = full_output
+    [[Tv_SONIC_Vr]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Virtual temperature
+            statistic_type = variance
+            units = K^2
+        [[[xl]]]
+            name = ts_var
+            sheet = full_output
+    [[U_SONIC_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Along wind velocity component
+            standard_name = eastward_wind
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = u_rot
+            sheet = full_output
+    [[U_SONIC_Vr]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Along wind velocity component
+            statistic_type = variance
+            units = m^2/s^2
+        [[[xl]]]
+            name = u_var
+            sheet = full_output
+    [[V_SONIC_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Across wind velocity component
+            standard_name = northward_wind
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = v_rot
+            sheet = full_output
+    [[V_SONIC_Vr]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Across wind velocity component
+            statistic_type = variance
+            units = m^2/s^2
+        [[[xl]]]
+            name = v_var
+            sheet = full_output
+    [[W_SONIC_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Vertical wind velocity component
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = w_rot
+            sheet = full_output
+    [[W_SONIC_Vr]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Vertical wind velocity component
+            statistic_type = variance
+            units = m^2/s^2
+        [[[xl]]]
+            name = w_var
+            sheet = full_output
+    [[Wd_RMY_10m]]
+        [[[Attr]]]
+            height = 10m
+            instrument = RM Young
+            long_name = Wind direction
+            standard_name = wind_from_direction
+            statistic_type = average
+            units = degrees
+        [[[xl]]]
+            name = WD_1_1_1
+            sheet = biomet
+    [[Wd_SONIC_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Wind direction
+            standard_name = wind_from_direction
+            statistic_type = average
+            units = degrees
+        [[[xl]]]
+            name = wind_dir
+            sheet = full_output
+    [[Ws_RMY_10m]]
+        [[[Attr]]]
+            height = 10m
+            instrument = RM Young
+            long_name = Wind speed
+            standard_name = wind_speed
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = WS_1_1_1
+            sheet = biomet
+    [[Ws_SONIC_Av]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Wind speed
+            standard_name = wind_speed
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = wind_speed
+            sheet = full_output
+    [[ps]]
+        [[[Attr]]]
+            height = 20m
+            instrument = Li-7500A
+            long_name = Surface air pressure
+            standard_name = surface_air_pressure
+            statistic_type = average
+            units = Pa
+        [[[Function]]]
+            func = Pa_to_kPa(ps)
+        [[[xl]]]
+            name = air_pressure
+            sheet = full_output
+    [[ustar]]
+        [[[Attr]]]
+            height = 20m
+            instrument = CSAT3
+            long_name = Friction velocity
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = u*
+            sheet = full_output

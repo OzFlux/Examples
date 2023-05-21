@@ -1,0 +1,647 @@
+level = L1
+[Files]
+    file_path = ../Examples/CumberlandPlain/Data/Tower/2019/
+    in_filename = CumberlandPlain_2019_L1.xls
+    in_firstdatarow = 2
+    in_headerrow = 1
+    out_filename = CumberlandPlain_2019_L1.nc
+[Global]
+    Conventions = CF-1.8
+    acknowledgement = '''This work used eddy covariance data collected by the TERN Ecosystem 
+Processes facility. Ecosystem Processes would like to acknowledge the financial support of the 
+Australian Federal Government via the National Collaborative Research Infrastructure Scheme 
+and the Education Investment Fund.'''
+    altitude = 27 m
+    canopy_height = 23 m
+    comment = CF metadata, OzFlux standard variable names
+    contact = e.pendall@uws.edu.au
+    data_link = http://data.ozflux.org.au/
+    featureType = timeSeries
+    fluxnet_id = AU-Cum
+    history = June 2021 processing
+    institution = HIE, UWS
+    latitude = -33.615278
+    license = https://creativecommons.org/licenses/by/4.0/
+    license_name = CC BY 4.0
+    longitude = 150.723611
+    metadata_link = http://http://www.ozflux.org.au/monitoringsites/CumberlandPlain/index.html
+    ozflux_link = http://ozflux.org.au/
+    publisher_name = TERN Ecosystem Processes,OzFlux
+    references = None
+    site_name = Cumberland Plain
+    site_pi = Elise Pendall
+    soil = 
+    source = 30m flux tower plus array of soil sensors
+    time_step = 30
+    time_zone = Australia/Sydney
+    title = Flux tower data set from the CUP site for the calendar year 2019
+    tower_height = 30 m
+    vegetation = Dry sclerophyll forest
+[Variables]
+    [[AH_HMP_30m]]
+        [[[Attr]]]
+            height = 30m
+            instrument = HMP155
+            long_name = Absolute humidity
+            standard_name = mass_concentration_of_water_vapor_in_air
+            statistic_type = average
+            units = g/m^3
+        [[[xl]]]
+            name = Ah_HMP_155_Avg
+            sheet = SmartFlux
+    [[AH_HMP_7m]]
+        [[[Attr]]]
+            height = 7m
+            instrument = HMP45C
+            long_name = Absolute humidity
+            standard_name = mass_concentration_of_water_vapor_in_air
+            statistic_type = average
+            units = g/m^3
+        [[[xl]]]
+            name = Ah_HMP_01_Avg
+            sheet = SmartFlux
+    [[AH_IRGA_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500A
+            long_name = Absolute humidity
+            standard_name = mass_concentration_of_water_vapor_in_air
+            statistic_type = average
+            units = g/m^3
+        [[[Function]]]
+            func = kgpm3_to_gpm3(AH_IRGA_Av)
+        [[[xl]]]
+            name = water_vapor_density
+            sheet = SmartFlux
+    [[AH_IRGA_Vr]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500A
+            long_name = Absolute humidity
+            statistic_type = variance
+            units = g^2/m^6
+        [[[Function]]]
+            func = mmolpm3_to_gH2Opm3(H2O_IRGA_Vr)
+    [[CO2_IRGA_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500A
+            long_name = CO2 concentration
+            standard_name = mole_fraction_of_carbon_dioxide_in_air
+            statistic_type = average
+            units = umol/mol
+        [[[xl]]]
+            name = co2_mixing_ratio
+            sheet = SmartFlux
+    [[CO2_IRGA_Vr]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500A
+            long_name = CO2 concentration
+            statistic_type = variance
+            units = mmol^2/m^6
+        [[[xl]]]
+            name = co2_var
+            sheet = SmartFlux
+    [[DiffuseSS]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Sunshine Sensor
+            long_name = Diffuse Sunshine
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = DiffuseSS_Avg
+            sheet = SmartFlux
+    [[Fco2_EP]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B,Li-7500A
+            long_name = CO2 flux
+            standard_name = surface_upward_mole_flux_of_carbon_dioxide
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = co2_flux
+            sheet = SmartFlux
+    [[Fco2_EP_QC]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B,Li-7500A
+            long_name = CO2 flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_co2_flux
+            sheet = SmartFlux
+    [[Fe_EP]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B,Li-7500A
+            long_name = Latent heat flux
+            standard_name = surface_upward_latent_heat_flux
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = LE
+            sheet = SmartFlux
+    [[Fe_EP_QC]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B,Li-7500A
+            long_name = Latent heat flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_LE
+            sheet = SmartFlux
+    [[Fg_8cma]]
+        [[[Attr]]]
+            height = -0.08m
+            instrument = Huskeflux HFP01
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = shf_Avg
+            sheet = SmartFlux
+    [[Fg_8cmb]]
+        [[[Attr]]]
+            height = -0.08m
+            instrument = Huskeflux HFP01
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = shf02_Avg
+            sheet = SmartFlux
+    [[Fh_EP]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Sensible heat flux
+            standard_name = surface_upward_sensible_heat_flux
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = H
+            sheet = SmartFlux
+    [[Fh_EP_QC]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Sensible heat flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_H
+            sheet = SmartFlux
+    [[Fld]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Kipp and Zonen CNR4
+            long_name = Down-welling longwave radiation
+            standard_name = surface_downwelling_longwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rl_downwell_Avg
+            sheet = SmartFlux
+    [[Flu]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Kipp and Zonen CNR4
+            long_name = Up-welling longwave radiation
+            standard_name = surface_upwelling_longwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rl_upwell_Avg
+            sheet = SmartFlux
+    [[Fm_EP]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Momentum flux
+            standard_name = magnitude_of_surface_downward_stress
+            statistic_type = average
+            units = kg/m/s^2
+        [[[xl]]]
+            name = Tau
+            sheet = SmartFlux
+    [[Fm_EP_QC]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Momentum flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_Tau
+            sheet = SmartFlux
+    [[Fn_NR]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Hukseflux NR01
+            long_name = Net radiation
+            standard_name = surface_net_downward_radiative_flux
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rn_Avg
+            sheet = SmartFlux
+    [[Fsd]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Kipp and Zonen CNR4
+            long_name = Down-welling shortwave radiation
+            standard_name = surface_downwelling_shortwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rs_downwell_Avg
+            sheet = SmartFlux
+    [[Fsu]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Kipp and Zonen CNR4
+            long_name = Up-welling shortwave radiation
+            standard_name = surface_upwelling_shortwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rs_upwell_Avg
+            sheet = SmartFlux
+    [[H2O_HMP_30m]]
+        [[[Attr]]]
+            height = 30m
+            instrument = HMP45C
+            long_name = H2O concentration
+            standard_name = mole_fraction_of_water_vapor_in_air
+            statistic_type = average
+            units = mmol/mol
+        [[[Function]]]
+            func = gH2Opm3_to_mmolpmol(AH_HMP_30m,Ta_HMP_30m,ps)
+    [[H2O_HMP_7m]]
+        [[[Attr]]]
+            height = 7m
+            instrument = HMP45C
+            long_name = H2O concentration
+            standard_name = mole_fraction_of_water_vapor_in_air
+            statistic_type = average
+            units = mmol/mol
+        [[[Function]]]
+            func = gH2Opm3_to_mmolpmol(AH_HMP_7m,Ta_HMP_7m,ps)
+    [[H2O_IRGA_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500A
+            long_name = H2O concentration
+            standard_name = mole_fraction_of_water_vapor_in_air
+            statistic_type = average
+            units = mmol/mol
+        [[[xl]]]
+            name = h2o_mixing_ratio
+            sheet = SmartFlux
+    [[H2O_IRGA_Vr]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500A
+            long_name = H2O concentration
+            statistic_type = variance
+            units = mmol^2/m^6
+        [[[xl]]]
+            name = h2o_var
+            sheet = SmartFlux
+    [[PAR]]
+        [[[Attr]]]
+            height = 30m
+            instrument = LI190SB
+            long_name = Photosynthetically active radiation
+            standard_name = surface_downwelling_photosynthetic_photon_flux_in_air
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = PAR_downwell_Avg
+            sheet = SmartFlux
+    [[Precip]]
+        [[[Attr]]]
+            height = 0.6m
+            instrument = Hydrological Services CS7000
+            long_name = Rainfall
+            standard_name = thickness_of_rainfall_amount
+            statistic_type = sum
+            units = mm
+        [[[xl]]]
+            name = Rain_mm_Tot
+            sheet = SmartFlux
+    [[RH_HMP_30m]]
+        [[[Attr]]]
+            height = 30m
+            instrument = HMP155
+            long_name = Relative humidity
+            standard_name = relative_humidity
+            statistic_type = average
+            units = fraction
+        [[[Function]]]
+            func = fraction_to_percent(RH_HMP_30m)
+        [[[xl]]]
+            name = RH_HMP_155_Avg
+            sheet = SmartFlux
+    [[RH_HMP_7m]]
+        [[[Attr]]]
+            height = 7m
+            instrument = HMP45C
+            long_name = Relative humidity
+            standard_name = relative_humidity
+            statistic_type = average
+            units = fraction
+        [[[Function]]]
+            func = fraction_to_percent(RH_HMP_7m)
+        [[[xl]]]
+            name = RH_HMP_01_Avg
+            sheet = SmartFlux
+    [[RH_IRGA_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500A
+            long_name = Relative humidity
+            standard_name = relative_humidity
+            statistic_type = average
+            units = percent
+        [[[xl]]]
+            name = RH
+            sheet = SmartFlux
+    [[Sco2_profile]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-840
+            long_name = CO2 flux
+            standard_name = surface_upward_mole_flux_of_carbon_dioxide
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = Sc_total
+            sheet = SmartFlux
+    [[Signal_CO2]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500A
+            long_name = CO2 signal strength
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = co2_signal_strength_7500_mean
+            sheet = SmartFlux
+    [[Sws_20cma]]
+        [[[Attr]]]
+            height = 0.08 - 0.38 m vertically
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = VW_03_Avg
+            sheet = SmartFlux
+    [[Sws_20cmb]]
+        [[[Attr]]]
+            height = 0.08 - 0.38m vertically
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = VW_04_Avg
+            sheet = SmartFlux
+    [[Sws_8cma]]
+        [[[Attr]]]
+            height = -<.08m
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = VW_01_Avg
+            sheet = SmartFlux
+    [[Sws_8cmb]]
+        [[[Attr]]]
+            height = 0.08m horizontally in soil next to heat flux plate
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = VW_02_Avg
+            sheet = SmartFlux
+    [[Ta_HMP_30m]]
+        [[[Attr]]]
+            height = 30m
+            instrument = HMP155
+            long_name = Air temperature
+            standard_name = air_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Ta_HMP_155_Avg
+            sheet = SmartFlux
+    [[Ta_HMP_7m]]
+        [[[Attr]]]
+            height = 7m
+            instrument = HMP45C
+            long_name = Air temperature
+            standard_name = air_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Ta_HMP_01_Avg
+            sheet = SmartFlux
+    [[TotalSS]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Sunshine Sensor
+            long_name = Total Sunshine
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = TotalSS_Avg
+            sheet = SmartFlux
+    [[Ts_8cma]]
+        [[[Attr]]]
+            height = -0.08m
+            instrument = Campbell Scientific TCAV
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Ts_TCAV_01_Avg
+            sheet = SmartFlux
+    [[Ts_8cmb]]
+        [[[Attr]]]
+            height = -0.08m
+            instrument = Campbell Scientific TCAV
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Ts_TCAV_04_Avg
+            sheet = SmartFlux
+    [[Tv_SONIC_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Virtual temperature
+            standard_name = virtual_temperature
+            statistic_type = average
+            units = K
+        [[[Function]]]
+            func = K_to_C(Tv_SONIC_Av)
+        [[[xl]]]
+            name = sonic_temperature
+            sheet = SmartFlux
+    [[Tv_SONIC_Vr]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Virtual temperature
+            statistic_type = variance
+            units = degC^2
+        [[[xl]]]
+            name = ts_var
+            sheet = SmartFlux
+    [[U_SONIC_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Along wind velocity component
+            standard_name = eastward_wind
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = u_rot
+            sheet = SmartFlux
+    [[U_SONIC_Vr]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Along wind velocity component
+            statistic_type = variance
+            units = m^2/s^2
+        [[[xl]]]
+            name = u_var
+            sheet = SmartFlux
+    [[V_SONIC_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Across wind velocity component
+            standard_name = northward_wind
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = v_rot
+            sheet = SmartFlux
+    [[V_SONIC_Vr]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Across wind velocity component
+            statistic_type = variance
+            units = m^2/s^2
+        [[[xl]]]
+            name = v_var
+            sheet = SmartFlux
+    [[W_SONIC_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Vertical wind velocity component
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = w_rot
+            sheet = SmartFlux
+    [[W_SONIC_Vr]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Vertical wind velocity component
+            statistic_type = variance
+            units = m^2/s^2
+        [[[xl]]]
+            name = w_var
+            sheet = SmartFlux
+    [[Wd_SONIC_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Wind direction
+            standard_name = wind_from_direction
+            statistic_type = average
+            units = degrees
+        [[[xl]]]
+            name = wind_dir
+            sheet = SmartFlux
+    [[Wd_WS4_Av]]
+        [[[Attr]]]
+            height = 7m
+            instrument = WindSonic4
+            long_name = Wind direction
+            standard_name = wind_from_direction
+            statistic_type = average
+            units = degrees
+        [[[xl]]]
+            name = WD_WS4_Avg
+            sheet = SmartFlux
+    [[Ws_SONIC_Av]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Wind speed
+            standard_name = wind_speed
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = wind_speed
+            sheet = SmartFlux
+    [[Ws_WS4_Av]]
+        [[[Attr]]]
+            height = 7m
+            instrument = WindSonic4
+            long_name = Wind speed
+            standard_name = wind_speed
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = WS_WS4_Avg
+            sheet = SmartFlux
+    [[ps]]
+        [[[Attr]]]
+            height = 30m
+            instrument = Li-7500
+            long_name = Surface air pressure
+            standard_name = surface_air_pressure
+            statistic_type = average
+            units = Pa
+        [[[Function]]]
+            func = Pa_to_kPa(ps)
+        [[[xl]]]
+            name = air_pressure
+            sheet = SmartFlux
+    [[ustar_EP]]
+        [[[Attr]]]
+            height = 30m
+            instrument = CSAT3B
+            long_name = Friction velocity
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = u.
+            sheet = SmartFlux

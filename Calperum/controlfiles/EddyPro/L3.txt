@@ -1,0 +1,98 @@
+level = L3
+[Files]
+    file_path = ../Examples/Calperum/Data/EddyPro/2016/
+    in_filename = Calperum_2016_L2.nc
+    out_filename = Calperum_2016_L3.nc
+    plot_path = ../Examples/Calperum/Plots/
+[Options]
+    CO2Units = umol/mol
+    CalculateFluxes = No
+    Fco2Units = umol/m^2/s
+    zms = 20
+    2DCoordRotation = No
+    MassmanCorrection = No
+    ApplyWPL = No
+[Soil]
+    BulkDensity = 1600
+    FgDepth = -0.08
+    OrganicContent = 0.01
+    SwsDefault = 0.1
+    SwsSeries = Sws
+[Variables]
+    [[CO2]]
+        [[[MergeSeries]]]
+            source = CO2_IRGA_Av
+        [[[RangeCheck]]]
+            lower = 250.0
+            upper = 900.0
+    [[Fg]]
+        [[[AverageSeries]]]
+            source = Fg
+        [[[RangeCheck]]]
+            lower = -300.0
+            upper = 300.0
+    [[Fn]]
+        [[[MergeSeries]]]
+            source = Fn_4cmpt,Fn
+        [[[RangeCheck]]]
+            lower = -150.0
+            upper = 1100.0
+    [[H2O]]
+        [[[MergeSeries]]]
+            source = H2O_IRGA_Av
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 3000.0
+    [[RH]]
+        [[[MergeSeries]]]
+            source = RH_HMP_2m,RH_IRGA_Av
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 100.0
+    [[Sws]]
+        [[[AverageSeries]]]
+            source = Sws
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Ta]]
+        [[[MergeSeries]]]
+            source = Ta_HMP_2m,Ta_SONIC_Av
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 50.0
+    [[Ts]]
+        [[[AverageSeries]]]
+            source = Ts
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 60.0
+    [[Wd]]
+        [[[MergeSeries]]]
+            source = Wd_RMY_10m,Wd_SONIC_Av
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Ws]]
+        [[[MergeSeries]]]
+            source = Ws_RMY_10m,Ws_SONIC_Av
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+[Plots]
+    [[Radiative fluxes]]
+        variables = Fsd,Fsu,Fld,Flu,Fn
+    [[Turbulent fluxes]]
+        variables = Fh,Fe,Fco2,ustar,Fm
+    [[Fh diagnostics]]
+        variables = Fh,Fh_EP_QC,W_SONIC_Vr,Tv_SONIC_Vr
+    [[Fe diagnostics]]
+        variables = Fe,Fe_EP_QC,W_SONIC_Vr,H2O_IRGA_Vr,CO2_IRGA_Vr
+    [[Fco2 diagnostics]]
+        variables = Fco2,Fco2_EP_QC,W_SONIC_Vr,H2O_IRGA_Vr,CO2_IRGA_Vr
+    [[Air temperature, humidity and CO2]]
+        variables = Ta,Ta_HMP_2m,RH,RH_HMP_2m,CO2_IRGA_Av
+    [[Soil variables]]
+        variables = Precip,Sws,Ts,Fg
+    [[Pressure, wind speed and direction]]
+        variables = ps,Ws,Ws_RMY_10m,Ws_SONIC_Av,Wd,Wd_RMY_10m,Wd_SONIC_Av

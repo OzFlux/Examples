@@ -1,0 +1,343 @@
+level = L2
+[Files]
+    file_path = ../Examples/CumberlandPlain/Data/Tower/2017/
+    in_filename = CumberlandPlain_2017_L1.nc
+    out_filename = CumberlandPlain_2017_L2.nc
+    plot_path = ../Examples/CumberlandPlain/Plots/
+[Options]
+    irga_type = Li-7500
+    sonic_type = CSAT3
+    IRGA_Check = Yes
+    SONIC_Check = Yes
+[Variables]
+    [[AGC_IRGA]]
+        [[[RangeCheck]]]
+            lower = 70.0
+            upper = 100.0
+    [[AH_HMP_30m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 30.0
+    [[AH_HMP_7m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 30.0
+    [[AH_IRGA_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 35.0
+    [[AH_IRGA_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 10.0
+    [[CO2_IRGA_Av]]
+        [[[RangeCheck]]]
+            lower = 500.0
+            upper = 2000.0
+    [[CO2_IRGA_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[Diag_IRGA]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 10.5
+    [[Diag_SONIC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 3000.0
+    [[DiffuseSS]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 2500.0
+    [[Fco2_EP]]
+        [[[DependencyCheck]]]
+            source = AGC_IRGA,Fco2_EP_QC,Uz_SONIC_Vr,CO2_IRGA_Sd,AH_IRGA_Sd
+        [[[DiurnalCheck]]]
+            numsd = 3.0
+        [[[RangeCheck]]]
+            lower = -50.0
+            upper = 50.0
+    [[Fco2_EP_QC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 1.5
+    [[Sco2_profile]]
+        [[[DiurnalCheck]]]
+            numsd = 3.0
+        [[[RangeCheck]]]
+            lower = -20.0
+            upper = 20.0
+    [[Fe_EP]]
+        [[[DependencyCheck]]]
+            source = AGC_IRGA,Fe_EP_QC,Uz_SONIC_Vr,CO2_IRGA_Sd,AH_IRGA_Sd
+        [[[RangeCheck]]]
+            lower = -50.0
+            upper = 800.0
+    [[Fe_EP_QC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 1.5
+    [[Fg_8cma]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 100.0
+    [[Fh_EP]]
+        [[[DependencyCheck]]]
+            source = AGC_IRGA,Fh_EP_QC,Uz_SONIC_Vr,Tv_SONIC_Vr
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 800.0
+    [[Fh_EP_QC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 1.5
+    [[Fld]]
+        [[[RangeCheck]]]
+            lower = 250.0
+            upper = 700.0
+    [[Flu]]
+        [[[RangeCheck]]]
+            lower = 300.0
+            upper = 700.0
+    [[Fm_EP]]
+        [[[DependencyCheck]]]
+            source = Fm_EP_QC,Uz_SONIC_Vr,Ux_SONIC_Vr,Uy_SONIC_Vr
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 10.0
+    [[Fm_EP_QC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 1.5
+    [[Fn_NR]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 1000.0
+    [[Fsd]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 1500.0
+    [[Fsu]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 500.0
+    [[H2O_HMP_30m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[H2O_HMP_7m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[H2O_IRGA_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[H2O_IRGA_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 100.0
+    [[Precip]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[RH_HMP_30m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 110.0
+    [[RH_HMP_7m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 110.0
+    [[RH_IRGA_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 110.0
+    [[Sws_20cma]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.9
+    [[Sws_20cmb]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.9
+    [[Sws_8cma]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.6
+    [[Sws_8cmb]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.6
+    [[Ta_HMP_30m]]
+        [[[RangeCheck]]]
+            lower = -5.0
+            upper = 50.0
+    [[Ta_HMP_7m]]
+        [[[RangeCheck]]]
+            lower = -5.0
+            upper = 50.0
+    [[TotalSS]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 2500.0
+    [[Ts_20cma]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 60.0
+    [[Ts_20cmb]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 60.0
+    [[Ts_4cma]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 60.0
+    [[Ts_8cma]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 60.0
+    [[Tv_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[Tv_SONIC_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 2.0
+    [[UxA]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[UxC]]
+        [[[DiurnalCheck]]]
+            numsd = 3.0
+        [[[RangeCheck]]]
+            lower = -4.0
+            upper = 4.0
+    [[UxT]]
+        [[[RangeCheck]]]
+            lower = -2.0
+            upper = 2.0
+    [[UxUy]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[UxUz]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 10.0
+    [[Ux_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -20.0
+            upper = 20.0
+    [[Ux_SONIC_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 3.0
+    [[UyA]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[UyC]]
+        [[[DiurnalCheck]]]
+            numsd = 3.0
+        [[[RangeCheck]]]
+            lower = -4.0
+            upper = 4.0
+    [[UyT]]
+        [[[RangeCheck]]]
+            lower = -2.0
+            upper = 2.0
+    [[UyUz]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 10.0
+    [[Uy_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -20.0
+            upper = 20.0
+    [[Uy_SONIC_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 3.0
+    [[UzA]]
+        [[[RangeCheck]]]
+            lower = -0.01
+            upper = 0.5
+    [[UzC]]
+        [[[DiurnalCheck]]]
+            numsd = 3.0
+        [[[RangeCheck]]]
+            lower = -5.0
+            upper = 5.0
+    [[UzT]]
+        [[[RangeCheck]]]
+            lower = -0.2
+            upper = 1.0
+    [[Uz_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[Uz_SONIC_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 1.25
+    [[Wd_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Wd_WS4_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Ws_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[Ws_WS4_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[ps]]
+        [[[RangeCheck]]]
+            lower = 95.0
+            upper = 105.0
+    [[ustar_EP]]
+        [[[DependencyCheck]]]
+            source = Fm_EP_QC,Uz_SONIC_Vr,Ux_SONIC_Vr,Uy_SONIC_Vr
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 3.0
+[Plots]
+    [[Radiative fluxes]]
+        variables = Fsd,Fsu,Fld,Flu,Fn_NR
+    [[Covariances (CSAT)]]
+        variables = UzT,UxT,UyT,UxUz,UyUz,UxUy,Ux_SONIC_Sd,Uy_SONIC_Sd,Uz_SONIC_Sd
+    [[Covariances (CSAT&7500)]]
+        variables = UzA,UxA,UyA,UzC,UxC,UyC
+    [[Turbulent fluxes: EddyPro]]
+        variables = Fm_EP,ustar_EP,Fh_EP,Fe_EP,Fco2_EP
+    [[Air temperature, humidity and CO2]]
+        variables = Ta_HMP_7m,Ta_HMP_30m,Tv_SONIC_Av,AH_HMP_7m,AH_HMP_30m,AH_IRGA_Av,CO2_IRGA_Av
+    [[Soil temperature and heat flux]]
+        variables = Ts_4cma,Ts_8cma,Ts_20cma,Ts_20cmb,Fg_8cma
+    [[Soil moisture]]
+        variables = Sws_8cma,Sws_8cmb,Sws_20cma,Sws_20cmb
+    [[Pressure, wind components and rainfall]]
+        variables = ps,Ux_SONIC_Av,Uy_SONIC_Av,Uz_SONIC_Av,Precip
+    [[Wind speed and direction]]
+        variables = Ws_SONIC_Av,Ws_WS4_Av,Wd_SONIC_Av,Wd_WS4_Av
+    [[CO2 Storage]]
+        variables = Sco2_profile
+    [[IRGA diagnostics]]
+        variables = AGC_IRGA,Fco2_EP_QC,CO2_IRGA_Sd,AH_IRGA_Sd,Precip
+    [[Fc diagnostics]]
+        variables = UzC,Fco2_EP,AGC_IRGA,CO2_IRGA_Sd,AH_IRGA_Sd,Precip
+    [[Fe diagnostics]]
+        variables = UzA,Fe_EP,AGC_IRGA,CO2_IRGA_Sd,AH_IRGA_Sd,Precip
+    [[Fh diagnostics]]
+        variables = UzT,Fh_EP,Fh_EP_QC,Uz_SONIC_Sd,Tv_SONIC_Sd
+    [[Fc_profile diagnostics]]
+        variables = Sco2_profile,CO2_IRGA_Sd,AH_IRGA_Sd

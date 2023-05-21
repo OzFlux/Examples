@@ -1,0 +1,72 @@
+level = batch
+[Options]
+    levels = L1,L2,L3,concatenate,climatology,cpd_mchugh,cpd_mcnew,cpd_barr,mpt,L4,L5,L6
+[Levels]
+    [[L1]]
+        0 = ../Examples/Loxton/controlfiles/L1.txt
+        1 = ../Examples/Calperum/controlfiles/OzFlux/L1.txt
+        2 = ../Examples/Calperum/controlfiles/EddyPro/L1.txt
+        3 = ../Examples/CumberlandPlain/controlfiles/2014/L1.txt
+        4 = ../Examples/CumberlandPlain/controlfiles/2015/L1.txt
+        5 = ../Examples/CumberlandPlain/controlfiles/2016/L1.txt
+        6 = ../Examples/CumberlandPlain/controlfiles/2017/L1.txt
+        7 = ../Examples/CumberlandPlain/controlfiles/2018/L1.txt
+        8 = ../Examples/CumberlandPlain/controlfiles/2019/L1.txt
+        9 = ../Examples/CumberlandPlain/controlfiles/2020/L1.txt
+    [[L2]]
+        0 = ../Examples/Loxton/controlfiles/L2.txt
+        1 = ../Examples/Calperum/controlfiles/OzFlux/L2.txt
+        2 = ../Examples/Calperum/controlfiles/EddyPro/L2.txt
+        3 = ../Examples/CumberlandPlain/controlfiles/2014/L2.txt
+        4 = ../Examples/CumberlandPlain/controlfiles/2015/L2.txt
+        5 = ../Examples/CumberlandPlain/controlfiles/2016/L2.txt
+        6 = ../Examples/CumberlandPlain/controlfiles/2017/L2.txt
+        7 = ../Examples/CumberlandPlain/controlfiles/2018/L2.txt
+        8 = ../Examples/CumberlandPlain/controlfiles/2019/L2.txt
+        9 = ../Examples/CumberlandPlain/controlfiles/2020/L2.txt
+    [[L3]]
+        0 = ../Examples/Loxton/controlfiles/L3.txt
+        1 = ../Examples/Calperum/controlfiles/OzFlux/L3.txt
+        2 = ../Examples/Calperum/controlfiles/EddyPro/L3.txt
+        3 = ../Examples/CumberlandPlain/controlfiles/2014/L3.txt
+        4 = ../Examples/CumberlandPlain/controlfiles/2015/L3.txt
+        5 = ../Examples/CumberlandPlain/controlfiles/2016/L3.txt
+        6 = ../Examples/CumberlandPlain/controlfiles/2017/L3.txt
+        7 = ../Examples/CumberlandPlain/controlfiles/2018/L3.txt
+        8 = ../Examples/CumberlandPlain/controlfiles/2019/L3.txt
+        9 = ../Examples/CumberlandPlain/controlfiles/2020/L3.txt
+    [[concatenate]]
+        0 = ../Examples/Calperum/controlfiles/concatenate.txt
+        1 = ../Examples/CumberlandPlain/controlfiles/concatenate.txt
+    [[climatology]]
+        0 = ../Examples/Loxton/controlfiles/climatology.txt
+        1 = ../Examples/Calperum/controlfiles/climatology.txt
+        2 = ../Examples/CumberlandPlain/controlfiles/climatology.txt
+    [[cpd_mchugh]]
+        0 = ../Examples/Loxton/controlfiles/cpd_mchugh.txt
+        1 = ../Examples/Calperum/controlfiles/cpd_mchugh.txt
+        2 = ../Examples/CumberlandPlain/controlfiles/cpd_mchugh.txt
+    [[cpd_mcnew]]
+        0 = ../Examples/Loxton/controlfiles/cpd_mcnew.txt
+        1 = ../Examples/Calperum/controlfiles/cpd_mcnew.txt
+        2 = ../Examples/CumberlandPlain/controlfiles/cpd_mcnew.txt
+    [[cpd_barr]]
+        0 = ../Examples/Loxton/controlfiles/cpd_barr.txt
+        1 = ../Examples/Calperum/controlfiles/cpd_barr.txt
+        2 = ../Examples/CumberlandPlain/controlfiles/cpd_barr.txt
+    [[mpt]]
+        0 = ../Examples/Loxton/controlfiles/mpt.txt
+        1 = ../Examples/Calperum/controlfiles/mpt.txt
+        2 = ../Examples/CumberlandPlain/controlfiles/mpt.txt
+    [[L4]]
+        0 = ../Examples/Loxton/controlfiles/L4.txt
+        1 = ../Examples/Calperum/controlfiles/L4.txt
+        2 = ../Examples/CumberlandPlain/controlfiles/L4.txt
+    [[L5]]
+        0 = ../Examples/Loxton/controlfiles/L5.txt
+        1 = ../Examples/Calperum/controlfiles/L5.txt
+        2 = ../Examples/CumberlandPlain/controlfiles/L5.txt
+    [[L6]]
+        0 = ../Examples/Loxton/controlfiles/L6.txt
+        1 = ../Examples/Calperum/controlfiles/L6.txt
+        2 = ../Examples/CumberlandPlain/controlfiles/L6.txt

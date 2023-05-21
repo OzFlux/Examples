@@ -1,0 +1,22 @@
+level = concatenate
+[Options]
+    MaxGapInterpolate = 0
+    Truncate = Yes
+    TruncateThreshold = 50
+    SeriesToCheck = Fco2,Fe,Fh,Fm
+[Files]
+    plot_path = ../Examples/Calperum/Plots/
+    [[Out]]
+        ncFileName = ../Examples/Calperum/Data/Portal/Calperum_L3.nc
+    [[In]]
+        0 = ../Examples/Calperum/Data/Portal/Calperum_2010_L3.nc
+        1 = ../Examples/Calperum/Data/Portal/Calperum_2011_L3.nc
+        2 = ../Examples/Calperum/Data/Portal/Calperum_2012_L3.nc
+        3 = ../Examples/Calperum/Data/Portal/Calperum_2013_L3.nc
+        4 = ../Examples/Calperum/Data/Portal/Calperum_2014_L3.nc
+        5 = ../Examples/Calperum/Data/Portal/Calperum_2015_L3.nc
+        6 = ../Examples/Calperum/Data/Portal/Calperum_2016_L3.nc
+        7 = ../Examples/Calperum/Data/Portal/Calperum_2017_L3.nc
+        8 = ../Examples/Calperum/Data/Portal/Calperum_2018_L3.nc
+        9 = ../Examples/Calperum/Data/Portal/Calperum_2019_L3.nc
+        10 = ../Examples/Calperum/Data/Portal/Calperum_2020_L3.nc

@@ -1,0 +1,57 @@
+level = L5
+[Files]
+    plot_path = ../Examples/Loxton/Plots/
+    file_path = ../Examples/Loxton/Data/Tower/
+    in_filename = Loxton_L4.nc
+    out_filename = Loxton_L5.nc
+    cpd_filename = Loxton_L3_CPD_McHugh.xlsx
+[Options]
+    MaxGapInterpolate = 3
+    FilterList = Fco2
+    TurbulenceFilter = ustar
+    DayNightFilter = Fsd
+    AcceptDayTimes = Yes
+    TruncateToImports = Yes
+    KeepIntermediateSeries = Yes
+[GUI]
+    [[GapFillUsingSOLO]]
+        auto_complete = yes
+        end_date = ""
+        iterations = 500
+        learning_rate = 0.001
+        min_percent = 25
+        nda_factor = 5
+        nodes = auto
+        number_days = 60
+        number_months = 2
+        overwrite = no
+        period_option = days
+        show_all = no
+        show_plots = no
+        start_date = ""
+        training = 500
+[Fluxes]
+    [[ustar]]
+        [[[MergeSeries]]]
+            source = ustar,ustar_SOLO
+        [[[GapFillUsingSOLO]]]
+            [[[[ustar_SOLO]]]]
+                drivers = Fsd,Ta,SH,Ws
+    [[Fe]]
+        [[[MergeSeries]]]
+            source = Fe,Fe_SOLO
+        [[[GapFillUsingSOLO]]]
+            [[[[Fe_SOLO]]]]
+                drivers = Fn,Fg,SH,VPD,Ta,Ts
+    [[Fh]]
+        [[[MergeSeries]]]
+            source = Fh,Fh_SOLO
+        [[[GapFillUsingSOLO]]]
+            [[[[Fh_SOLO]]]]
+                drivers = Fn,Fg,SH,VPD,Ta,Ts
+    [[Fco2]]
+        [[[MergeSeries]]]
+            source = Fco2,Fco2_SOLO
+        [[[GapFillUsingSOLO]]]
+            [[[[Fco2_SOLO]]]]
+                drivers = Fn,Fg,SH,VPD,Ta,Ts

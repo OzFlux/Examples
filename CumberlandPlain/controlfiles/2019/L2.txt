@@ -1,0 +1,278 @@
+level = L2
+[Files]
+    file_path = ../Examples/CumberlandPlain/Data/Tower/2019/
+    in_filename = CumberlandPlain_2019_L1.nc
+    out_filename = CumberlandPlain_2019_L2.nc
+    plot_path = ../Examples/CumberlandPlain/Plots/
+[Options]
+    irga_type = Li-7500A
+[Variables]
+    [[AH_HMP_30m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 30.0
+    [[AH_HMP_7m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 30.0
+    [[AH_IRGA_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 35.0
+        [[[DependencyCheck]]]
+            source = Signal_CO2,H2O_IRGA_Vr
+    [[AH_IRGA_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 10.0
+    [[CO2_IRGA_Av]]
+        [[[DependencyCheck]]]
+            source = Signal_CO2,CO2_IRGA_Vr
+        [[[RangeCheck]]]
+            lower = 250.0
+            upper = 1000.0
+    [[CO2_IRGA_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[DiffuseSS]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 2500.0
+    [[Fco2_EP]]
+        [[[DependencyCheck]]]
+            source = Signal_CO2,Fco2_EP_QC,W_SONIC_Sd,H2O_IRGA_Sd,CO2_IRGA_Sd
+        [[[DiurnalCheck]]]
+            numsd = 3.0
+        [[[RangeCheck]]]
+            lower = -50.0
+            upper = 50.0
+    [[Fco2_EP_QC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 1.5
+    [[Sco2_profile]]
+        [[[DiurnalCheck]]]
+            numsd = 3.0
+        [[[RangeCheck]]]
+            lower = -20.0
+            upper = 20.0
+    [[Fe_EP]]
+        [[[DependencyCheck]]]
+            source = Signal_CO2,Fe_EP_QC,W_SONIC_Sd,H2O_IRGA_Sd,CO2_IRGA_Sd
+        [[[RangeCheck]]]
+            lower = -50.0
+            upper = 800.0
+    [[Fe_EP_QC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 1.5
+    [[Fg_8cma]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 250.0
+    [[Fg_8cmb]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 250.0
+    [[Fh_EP]]
+        [[[DependencyCheck]]]
+            source = Fh_EP_QC,W_SONIC_Sd,Tv_SONIC_Sd
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 800.0
+    [[Fh_EP_QC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 1.5
+    [[Fld]]
+        [[[RangeCheck]]]
+            lower = 150.0
+            upper = 500.0
+    [[Flu]]
+        [[[RangeCheck]]]
+            lower = 200.0
+            upper = 700.0
+    [[Fm_EP]]
+        [[[DependencyCheck]]]
+            source = Fm_EP_QC,U_SONIC_Sd,V_SONIC_Sd,W_SONIC_Sd
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 2.0
+    [[Fm_EP_QC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 1.5
+    [[Fn_NR]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 1000.0
+    [[Fsd]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 1500.0
+    [[Fsu]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 500.0
+    [[H2O_HMP_30m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[H2O_HMP_7m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[H2O_IRGA_Av]]
+        [[[DependencyCheck]]]
+            source = Signal_CO2,H2O_IRGA_Vr
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 3000.0
+    [[H2O_IRGA_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 100.0
+    [[Precip]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 100.0
+    [[RH_HMP_30m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 110.0
+    [[RH_HMP_7m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 110.0
+    [[RH_IRGA_Av]]
+        [[[DependencyCheck]]]
+            source = Signal_CO2,H2O_IRGA_Vr
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 110.0
+    [[Signal_CO2]]
+        [[[LowerCheck]]]
+            0 = 2019-01-01 00:00,80,2019-02-27 23:30,80
+            1 = 2019-02-28 00:00,90,2019-05-13 23:30,90
+            2 = 2019-05-14 00:00,80,2019-09-05 23:30,80
+            3 = 2019-09-05 00:00,85,2020-01-01 00:00,85
+    [[Sws_20cma]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_20cmb]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_8cma]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_8cmb]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Ta_HMP_30m]]
+        [[[RangeCheck]]]
+            lower = -5.0
+            upper = 50.0
+    [[Ta_HMP_7m]]
+        [[[RangeCheck]]]
+            lower = -5.0
+            upper = 50.0
+    [[TotalSS]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 2500.0
+    [[Ts_8cma]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 60.0
+    [[Ts_8cmb]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 60.0
+    [[Tv_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 50.0
+    [[Tv_SONIC_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 2.0
+    [[U_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 10.0
+    [[U_SONIC_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 2.5
+    [[V_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[V_SONIC_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 2.5
+    [[W_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[W_SONIC_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 1.25
+    [[Wd_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Wd_WS4_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Ws_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[Ws_WS4_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[ps]]
+        [[[RangeCheck]]]
+            lower = 95.0
+            upper = 105.0
+    [[ustar_EP]]
+        [[[DependencyCheck]]]
+            source = Fm_EP_QC,U_SONIC_Sd,V_SONIC_Sd,W_SONIC_Sd
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 3.0
+[Plots]
+    [[Radiative fluxes]]
+        variables = Fsd,Fsu,Fld,Flu,Fn_NR
+    [[Turbulent fluxes: EddyPro]]
+        variables = Fm_EP,ustar_EP,Fh_EP,Fe_EP,Fco2_EP
+    [[Air temperature, humidity and CO2]]
+        variables = Ta_HMP_7m,Ta_HMP_30m,Tv_SONIC_Av,AH_HMP_7m,AH_HMP_30m,AH_IRGA_Av,CO2_IRGA_Av
+    [[Soil temperature & heat flux]]
+        variables = Ts_8cma,Ts_8cmb,Fg_8cma,Fg_8cmb,Precip
+    [[Soil water content & rain]]
+        variables = Sws_8cma,Sws_8cmb,Sws_20cma,Sws_20cmb,Precip
+    [[Pressure, wind speed, wind direction & rainfall]]
+        variables = ps,Ws_SONIC_Av,U_SONIC_Av,V_SONIC_Av,W_SONIC_Av,Wd_SONIC_Av,Precip
+    [[CO2 storage]]
+        variables = Sco2_profile
+    [[IRGA diagnostics]]
+        variables = Fco2_EP_QC,CO2_IRGA_Sd,H2O_IRGA_Sd,Signal_CO2,Precip
+    [[Fc diagnostics]]
+        variables = Fco2_EP,Fco2_EP_QC,Signal_CO2,CO2_IRGA_Sd,H2O_IRGA_Sd,Precip
+    [[Fe diagnostics]]
+        variables = Fe_EP,Fe_EP_QC,Signal_CO2,CO2_IRGA_Sd,H2O_IRGA_Sd,Precip
+    [[Fh diagnostics]]
+        variables = Fh_EP,Fh_EP_QC,W_SONIC_Sd,Tv_SONIC_Sd
+    [[Fc_profile diagnostics]]
+        variables = Sco2_profile,Signal_CO2,CO2_IRGA_Sd,H2O_IRGA_Sd

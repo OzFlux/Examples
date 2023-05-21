@@ -1,0 +1,435 @@
+level = L2
+[Files]
+    file_path = ../Examples/Calperum/Data/OzFlux/2016/
+    in_filename = Calperum_2016_L1.nc
+    out_filename = Calperum_2016_L2.nc
+    plot_path = ../Examples/Calperum/Plots/
+[Options]
+    irga_type = Li-7500A
+    sonic_type = CSAT3
+    SONIC_Check = Yes
+    IRGA_Check = Yes
+[Variables]
+    [[AGC_IRGA]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 65.0
+    [[AH_HMP_2m]]
+        [[[ExcludeDates]]]
+            0 = 2016-8-03 07:00,2016-8-03 10:00
+            1 = 2016-8-05 06:00,2016-8-05 08:00
+            10 = 2016-8-24 06:00,2016-8-24 09:00
+            11 = 2016-8-26 03:00,2016-8-26 03:00
+            12 = 2016-8-30 00:00,2016-8-30 02:00
+            13 = 2016-8-31 05:00,2016-8-31 08:00
+            2 = 2016-8-06 06:00,2016-8-06 09:00
+            3 = 2016-8-10 20:00,2016-8-11 09:00
+            4 = 2016-8-14 04:00,2016-8-14 09:00
+            5 = 2016-8-19 02:00,2016-8-19 10:00
+            6 = 2016-8-20 01:00,2016-8-20 03:00
+            7 = 2016-8-20 05:00,2016-8-20 08:00
+            8 = 2016-8-21 05:00,2016-8-21 08:00
+            9 = 2016-8-23 04:00,2016-8-23 09:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 25.0
+    [[AH_IRGA_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 35.0
+    [[AH_IRGA_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 3.0
+    [[CO2_IRGA_Av]]
+        [[[RangeCheck]]]
+            lower = 500.0
+            upper = 1200.0
+    [[CO2_IRGA_Sd]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[Diag_IRGA]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 10.5
+    [[Diag_SONIC]]
+        [[[RangeCheck]]]
+            lower = -0.5
+            upper = 10.5
+    [[Fg_8cma]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 100.0
+    [[Fg_8cmb]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 100.0
+    [[Fg_8cmc]]
+        [[[RangeCheck]]]
+            lower = -100.0
+            upper = 100.0
+    [[Fld]]
+        [[[RangeCheck]]]
+            lower = 250.0
+            upper = 500.0
+    [[Flu]]
+        [[[RangeCheck]]]
+            lower = 250.0
+            upper = 625.0
+    [[Fsd]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 1500.0
+    [[Fsd_Li]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 1500.0
+    [[Fsu]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 500.0
+    [[Precip]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[Sws_100cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_100cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_100cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_10cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_10cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_10cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_180cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_180cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_180cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_25cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_25cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_25cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_50cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_50cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Sws_50cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Ta_HMP_2m]]
+        [[[ExcludeDates]]]
+            0 = 2016-8-03 07:00,2016-8-03 10:00
+            1 = 2016-8-05 06:00,2016-8-05 08:00
+            10 = 2016-8-24 06:00,2016-8-24 09:00
+            11 = 2016-8-26 03:00,2016-8-26 03:00
+            12 = 2016-8-30 00:00,2016-8-30 02:00
+            13 = 2016-8-31 05:00,2016-8-31 08:00
+            2 = 2016-8-06 06:00,2016-8-06 09:00
+            3 = 2016-8-10 20:00,2016-8-11 09:00
+            4 = 2016-8-14 04:00,2016-8-14 09:00
+            5 = 2016-8-19 02:00,2016-8-19 10:00
+            6 = 2016-8-20 01:00,2016-8-20 03:00
+            7 = 2016-8-20 05:00,2016-8-20 08:00
+            8 = 2016-8-21 05:00,2016-8-21 08:00
+            9 = 2016-8-23 04:00,2016-8-23 09:00
+        [[[RangeCheck]]]
+            lower = -5.0
+            upper = 50.0
+    [[Ts_100cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_100cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_100cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_10cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_10cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_10cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_180cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_180cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_180cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_25cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_25cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_25cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_50cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_50cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_50cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_8cma]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_8cmb]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Ts_8cmc]]
+        [[[ExcludeDates]]]
+            0 = 2016-7-07 10:00,2016-7-07 11:00
+        [[[RangeCheck]]]
+            lower = 2.0
+            upper = 60.0
+    [[Tv_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0
+    [[UxA]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[UxC]]
+        [[[RangeCheck]]]
+            lower = -4.0
+            upper = 4.0
+    [[UxT]]
+        [[[RangeCheck]]]
+            lower = -2.0
+            upper = 2.0
+    [[UxUy]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 10.0
+    [[UxUz]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 10.0
+    [[Ux_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -20.0
+            upper = 20.0
+    [[Ux_SONIC_Vr]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 10.0
+    [[UyA]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[UyC]]
+        [[[RangeCheck]]]
+            lower = -4.0
+            upper = 4.0
+    [[UyT]]
+        [[[RangeCheck]]]
+            lower = -2.0
+            upper = 2.0
+    [[UyUz]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 10.0
+    [[Uy_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -20.0
+            upper = 20.0
+    [[Uy_SONIC_Vr]]
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 10.0
+    [[UzA]]
+        [[[RangeCheck]]]
+            lower = -0.01
+            upper = 0.1
+    [[UzC]]
+        [[[RangeCheck]]]
+            lower = -2.0
+            upper = 2.0
+    [[UzT]]
+        [[[RangeCheck]]]
+            lower = -0.2
+            upper = 1.0
+    [[Uz_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[Wd_RMY_10m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Wd_RMY_2m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Wd_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Ws_RMY_10m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[Ws_RMY_2m]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[Ws_SONIC_Av]]
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 20.0
+    [[ps]]
+        [[[RangeCheck]]]
+            lower = 95.0
+            upper = 105.0
+[Plots]
+    [[Radiative fluxes]]
+        variables = Fsd_Li,Fsd,Fsu,Fld,Flu
+    [[Covariances (CSAT)]]
+        variables = UzT,UxT,UyT,UxUz,UyUz,UxUy,Ux_SONIC_Vr,Uy_SONIC_Vr
+    [[Covariances (CSAT&7500)]]
+        variables = UzA,UxA,UyA,UzC,UxC,UyC
+    [[Air temperature, humidity and CO2]]
+        variables = Ta_HMP_2m,Tv_SONIC_Av,AH_HMP_2m,AH_IRGA_Av,CO2_IRGA_Av
+    [[Rainfall and diagnostics]]
+        variables = Precip,AH_IRGA_Sd,CO2_IRGA_Sd,AGC_IRGA,Diag_IRGA,Diag_SONIC
+    [[Soil temperature and heat flux]]
+        variables = Ts_8cma,Ts_8cmb,Ts_8cmc,Fg_8cma,Fg_8cmb,Fg_8cmc
+    [[Soil temperature and water content at 10cm]]
+        variables = Ts_10cma,Ts_10cmb,Ts_10cmc,Sws_10cma,Sws_10cmb,Sws_10cmc
+    [[Pressure, wind components and rainfall]]
+        variables = ps,Ux_SONIC_Av,Uy_SONIC_Av,Uz_SONIC_Av,Precip,Vbat,Tpanel
+    [[Wind speed and direction]]
+        variables = Ws_SONIC_Av,Ws_RMY_2m,Ws_RMY_10m,Wd_SONIC_Av,Wd_RMY_2m,Wd_RMY_10m
+    [[xy plots:  Ah]]
+        type = xy
+        xseries = AH_HMP_2m
+        yseries = AH_IRGA_Av

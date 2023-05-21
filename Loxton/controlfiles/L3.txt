@@ -1,0 +1,141 @@
+level = L3
+[Files]
+    file_path = ../Examples/Loxton/Data/Tower/
+    in_filename = Loxton_L2.nc
+    out_filename = Loxton_L3.nc
+    plot_path = ../Examples/Loxton/Plots/
+[Options]
+    ApplyFco2Storage = Yes
+    CO2Units = umol/mol
+    CalculateFluxes = Yes
+    Fco2Units = umol/m^2/s
+    MassmanCorrection = Yes
+    zms = 10
+    2DCoordRotation = Yes
+    ApplyWPL = Yes
+[Soil]
+    BulkDensity = 1340
+    FgDepth = 0.1
+    OrganicContent = 0.05
+    SwsDefault = 0.10
+    SwsSeries = Sws
+[Massman]
+    east_separation = -0.10
+    north_separation = -0.15
+    vertical_separation = 0.00
+    z0 = 0.1
+    zmd = 6.3
+[Variables]
+    [[AH]]
+        [[[MergeSeries]]]
+            source = AH_HMP_10m,AH_IRGA_Av
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 35.0
+    [[CO2]]
+        [[[MergeSeries]]]
+            source = CO2_IRGA_Av
+        [[[RangeCheck]]]
+            lower = 250.0
+            upper = 900.0
+    [[Fco2]]
+        [[[MergeSeries]]]
+            source = Fco2,Fco2_EP
+        [[[RangeCheck]]]
+            lower = -50.0
+            upper = 50.0
+    [[Sco2]]
+        [[[MergeSeries]]]
+            source = Sco2_profile,Sco2_single
+        [[[RangeCheck]]]
+            lower = -50.0
+            upper = 50.0
+    [[Fe]]
+        [[[MergeSeries]]]
+            source = Fe,Fe_EP
+        [[[RangeCheck]]]
+            lower = -200.0
+            upper = 1500.0
+    [[Fg]]
+        [[[AverageSeries]]]
+            source = Fg_10cma,Fg_10cmb,Fg_10cmc,Fg_10cmd,Fg_10cme,Fg_10cmf
+        [[[RangeCheck]]]
+            lower = -300,-300,-300,-300,-300,-300,-300,-60,-300,-300,-300,-300
+            upper = 300,300,300,300,300,300,300,170,300,300,300,300
+    [[Fh]]
+        [[[MergeSeries]]]
+            source = Fh,Fh_EP
+        [[[RangeCheck]]]
+            lower = -800.0
+            upper = 800.0
+    [[Fm]]
+        [[[MergeSeries]]]
+            source = Fm,Fm_EP
+        [[[RangeCheck]]]
+            lower = -1.0
+            upper = 1.0
+    [[Fn]]
+        [[[MergeSeries]]]
+            source = Fn_4cmpt
+        [[[RangeCheck]]]
+            lower = -150.0
+            upper = 1500.0
+    [[Fsd]]
+        [[[MergeSeries]]]
+            source = Fsd
+        [[[RangeCheck]]]
+            lower = -150.0
+            upper = 1500.0
+    [[Sws]]
+        [[[AverageSeries]]]
+            source = Sws_005cm
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 0.5
+    [[Ta]]
+        [[[MergeSeries]]]
+            source = Ta_HMP_10m,Ta_SONIC_Av
+        [[[RangeCheck]]]
+            lower = -10.0
+            upper = 50.0
+    [[Ts]]
+        [[[AverageSeries]]]
+            source = Ts_2cma,Ts_2cmb,Ts_2cmc,Ts_2cmd,Ts_6cma,Ts_6cmb,Ts_6cmc,Ts_6cmd
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 60.0
+    [[Wd]]
+        [[[MergeSeries]]]
+            source = Wd_034B_Av,Wd_SONIC_Av
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 360.0
+    [[Ws]]
+        [[[MergeSeries]]]
+            source = Ws_034B_Av,Ws_SONIC_Av
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 30.0
+    [[ustar]]
+        [[[MergeSeries]]]
+            source = ustar,ustar_EP
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 2.0
+[Plots]
+    [[Radiative fluxes]]
+        variables = Fsd,Fsu,Fld,Flu,Fn
+    [[Turbulent fluxes]]
+        variables = Fh,Fe,Fco2,ustar,Fm
+    [[Fh diagnostics]]
+        variables = Fh,UzT,Diag_SONIC,Diag_IRGA,AGC_IRGA,AH_IRGA_Sd,CO2_IRGA_Sd
+    [[Fe diagnostics]]
+        variables = Fe,UzA,Diag_SONIC,Diag_IRGA,AGC_IRGA,AH_IRGA_Sd,CO2_IRGA_Sd
+    [[Fco2 diagnostics]]
+        variables = Fco2,UzC,Diag_SONIC,Diag_IRGA,AGC_IRGA,AH_IRGA_Sd,CO2_IRGA_Sd
+    [[Air temperature, humidity and CO2]]
+        variables = Ta,Ta_HMP_10m,AH,AH_HMP_10m,CO2_IRGA_Av
+    [[Soil temperature, water content and heat flux]]
+        variables = Precip,Ts,Sws,Sws_005cm,Fg
+    [[Pressure, wind speed and direction]]
+        variables = ps,Ws,Ux_SONIC_Av,Uy_SONIC_Av,Uz_SONIC_Av,Wd

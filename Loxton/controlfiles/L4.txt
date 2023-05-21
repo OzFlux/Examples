@@ -1,0 +1,187 @@
+level = L4
+[Files]
+    plot_path = ../Examples/Loxton/Plots/
+    file_path = ../Examples/Loxton/Data/Tower/
+    in_filename = Loxton_L3.nc
+    out_filename = Loxton_L4.nc
+    era5 = ../Examples/Loxton/Data/ERA5/Loxton_ERA5.nc
+    climatology = ../Examples/Loxton/Data/Tower/Loxton_L3_Climatology.xls
+    aws = ../Examples/Loxton/Data/AWS/Loxton_AWS.nc
+[Options]
+    MaxGapInterpolate = 3
+[GUI]
+    [[GapFillFromAlternate]]
+        auto_complete = yes
+        end_date = ""
+        min_percent = 30
+        number_days = 90
+        number_months = 3
+        overwrite = no
+        period_option = days
+        show_all = no
+        show_plots = no
+        start_date = ""
+[Drivers]
+    [[AH]]
+        [[[GapFillFromAlternate]]]
+            [[[[AH_era5]]]]
+                source = era5
+            [[[[AH_aws]]]]
+                source = aws
+        [[[GapFillFromClimatology]]]
+            [[[[AH_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = AH,AH_aws,AH_era5,AH_cli
+    [[CO2]]
+        [[[GapFillFromClimatology]]]
+            [[[[CO2_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = CO2,CO2_cli
+    [[Fa]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fa_era5]]]]
+                source = era5
+        [[[GapFillFromClimatology]]]
+            [[[[Fa_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fa,Fa_era5,Fa_cli
+    [[Fg]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fg_era5]]]]
+                source = era5
+        [[[GapFillFromClimatology]]]
+            [[[[Fg_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fg,Fg_era5,Fg_cli
+    [[Fld]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fld_era5]]]]
+                source = era5
+        [[[GapFillFromClimatology]]]
+            [[[[Fld_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fld,Fld_era5,Fld_cli
+    [[Flu]]
+        [[[GapFillFromAlternate]]]
+            [[[[Flu_era5]]]]
+                source = era5
+        [[[GapFillFromClimatology]]]
+            [[[[Flu_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Flu,Flu_era5,Flu_cli
+    [[Fn]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fn_era5]]]]
+                source = era5
+        [[[GapFillFromClimatology]]]
+            [[[[Fn_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fn,Fn_era5,Fn_cli
+    [[Fsd]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fsd_era5]]]]
+                source = era5
+        [[[GapFillFromClimatology]]]
+            [[[[Fsd_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fsd,Fsd_era5,Fsd_cli
+    [[Fsu]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fsu_era5]]]]
+                source = era5
+        [[[GapFillFromClimatology]]]
+            [[[[Fsu_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fsu,Fsu_era5,Fsu_cli
+    [[ps]]
+        [[[GapFillFromAlternate]]]
+            [[[[ps_era5]]]]
+                source = era5
+            [[[[ps_aws]]]]
+                source = aws
+        [[[GapFillFromClimatology]]]
+            [[[[ps_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = ps,ps_aws,ps_era5,ps_cli
+    [[Sws]]
+        [[[GapFillFromAlternate]]]
+            [[[[Sws_era5]]]]
+                source = ERA5
+                lag = no
+        [[[MergeSeries]]]
+            source = Sws,Sws_era5
+    [[Ta]]
+        [[[GapFillFromAlternate]]]
+            [[[[Ta_era5]]]]
+                source = era5
+            [[[[Ta_aws]]]]
+                source = aws
+        [[[GapFillFromClimatology]]]
+            [[[[Ta_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Ta,Ta_aws,Ta_era5,Ta_cli
+    [[Ts]]
+        [[[GapFillFromAlternate]]]
+            [[[[Ts_era5]]]]
+                source = era5
+        [[[GapFillFromClimatology]]]
+            [[[[Ts_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Ts,Ts_era5,Ts_cli
+    [[Ws]]
+        [[[GapFillFromAlternate]]]
+            [[[[Ws_era5]]]]
+                source = era5
+                fit = ols_thru0
+                lag = no
+            [[[[Ws_aws]]]]
+                source = aws
+                fit = ols_thru0
+                lag = no
+        [[[GapFillFromClimatology]]]
+            [[[[Ws_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Ws,Ws_aws,Ws_era5,Ws_cli
+    [[Wd]]
+        [[[GapFillFromAlternate]]]
+            [[[[Wd_era5]]]]
+                source = era5
+                fit = replace
+                lag = no
+            [[[[Wd_aws]]]]
+                source = aws
+                fit = replace
+                lag = no
+        [[[GapFillFromClimatology]]]
+            [[[[Wd_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Wd,Wd_aws,Wd_era5,Wd_cli
+    [[Precip]]
+        [[[GapFillFromAlternate]]]
+            [[[[Precip_era5]]]]
+                source = era5
+                fit = replace
+                lag = no
+            [[[[Precip_aws]]]]
+                source = aws
+                fit = replace
+                lag = no
+        [[[MergeSeries]]]
+            source = Precip,Precip_aws,Precip_era5
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0

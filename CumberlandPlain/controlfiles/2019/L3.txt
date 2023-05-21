@@ -1,0 +1,96 @@
+level = L3
+[Files]
+    file_path = ../Examples/CumberlandPlain/Data/Tower/2019/
+    in_filename = CumberlandPlain_2019_L2.nc
+    out_filename = CumberlandPlain_2019_L3.nc
+    plot_path = ../Examples/CumberlandPlain/Plots/
+[Options]
+    CO2Units = umol/mol
+    Fco2Units = umol/m^2/s
+    zms = 29
+    ApplyFco2Storage = Yes
+    CalculateFluxes = No
+[Soil]
+    FgDepth = 0.08
+    BulkDensity = 1900
+    OrganicContent = 0.05
+    SwsDefault = 0.08
+    SwsSeries = Sws_8cmb
+[Variables]
+    [[AH]]
+        [[[MergeSeries]]]
+            source = AH_HMP_30m,AH_HMP_7m
+    [[CO2]]
+        [[[MergeSeries]]]
+            source = CO2_IRGA_Av
+    [[Fco2]]
+        [[[MergeSeries]]]
+            source = Fco2_EP
+    [[Sco2]]
+        [[[MergeSeries]]]
+            source = Sco2_profile,Sco2_single
+    [[Fe]]
+        [[[MergeSeries]]]
+            source = Fe_EP
+    [[Fg]]
+        [[[AverageSeries]]]
+            source = Fg_8cma
+    [[Fh]]
+        [[[MergeSeries]]]
+            source = Fh_EP
+    [[Fm]]
+        [[[MergeSeries]]]
+            source = Fm_EP
+    [[Fn]]
+        [[[MergeSeries]]]
+            source = Fn_4cmpt,Fn_NR
+    [[H2O]]
+        [[[MergeSeries]]]
+            source = H2O_HMP_30m,H2O_HMP_7m,H2O_IRGA_Av
+    [[RH]]
+        [[[MergeSeries]]]
+            source = RH_HMP_30m,RH_HMP_7m,RH_IRGA_Av
+    [[Sws]]
+        [[[AverageSeries]]]
+            source = Sws_8cma,Sws_8cmb
+    [[Sws_20cm]]
+        [[[AverageSeries]]]
+            source = Sws_20cma,Sws_20cmb
+    [[Sws_8cm]]
+        [[[AverageSeries]]]
+            source = Sws_8cma,Sws_8cmb
+    [[Ta]]
+        [[[MergeSeries]]]
+            source = Ta_HMP_30m,Ta_SONIC_Av,Ta_HMP_7m
+    [[Ts]]
+        [[[AverageSeries]]]
+            source = Ts_8cma
+    [[Ts_8cm]]
+        [[[AverageSeries]]]
+            source = Ts_8cma
+    [[Wd]]
+        [[[MergeSeries]]]
+            source = Wd_WS4_Av,Wd_SONIC_Av
+    [[Ws]]
+        [[[MergeSeries]]]
+            source = Ws_WS4_Av,Ws_SONIC_Av
+    [[ustar]]
+        [[[MergeSeries]]]
+            source = ustar_EP
+[Plots]
+    [[Radiative fluxes]]
+        variables = Fsd,Fsu,Fld,Flu,Fn
+    [[Turbulent fluxes]]
+        variables = Fh,Fe,Fco2,Sco2,ustar
+    [[Fh diagnostics]]
+        variables = Fh,Signal_CO2,H2O_IRGA_Sd,CO2_IRGA_Sd
+    [[Fe diagnostics]]
+        variables = Fe,Signal_CO2,H2O_IRGA_Sd,CO2_IRGA_Sd
+    [[Fc diagnostics]]
+        variables = Fco2,Signal_CO2,H2O_IRGA_Sd,CO2_IRGA_Sd
+    [[Air temperature, humidity and CO2]]
+        variables = Ta,Ta_HMP_30m,Ta_HMP_7m,AH,AH_HMP_30m,AH_HMP_7m,CO2
+    [[Soil temperature, water content and heat flux]]
+        variables = Precip,Ts,Sws,Sws_20cm,Fg
+    [[Pressure, wind speed and direction]]
+        variables = ps,Ws,Wd

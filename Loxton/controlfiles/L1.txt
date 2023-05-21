@@ -1,0 +1,894 @@
+level = L1
+[Files]
+    file_path = ../Examples/Loxton/Data/Tower/
+    in_filename = Loxton_L1.xls
+    in_firstdatarow = 5
+    in_headerrow = 2
+    out_filename = Loxton_L1.nc
+[Global]
+    Conventions = CF-1.8
+    acknowledgement = '''This work used eddy covariance data collected by the TERN Ecosystem 
+Processes facility. Ecosystem Processes would like to acknowledge the financial support of the 
+Australian Federal Government via the National Collaborative Research Infrastructure Scheme 
+and the Education Investment Fund.'''
+    altitude = 40m
+    canopy_height = 5.5m (Stevens et al. 2012)
+    comment = CF metadata, OzFlux standard variable names
+    contact = Cacilia.Ewenz@internode.on.net
+    data_link = http://data.ozflux.org.au/
+    featureType = timeSeries
+    fluxnet_id = AU-Lox
+    history = June 2021 processing
+    institution = South Australian Research and Development Institute/Flinders University/Airborne Research Australia
+    latitude = -34.47035
+    license = https://creativecommons.org/licenses/by/4.0/
+    license_name = CC BY 4.0
+    longitude = 140.65512
+    ozflux_link = http://ozflux.org.au/
+    publisher_name = TERN Ecosystem Processes,OzFlux
+    references = Stevens, R., Ewenz, C., Grigson, G., and Conner, S., 2012: Water use by an irrigated almond (Prunus amygdalus) orchard. Irrigation Sciences, 29-2, Online First 16 March 2011 (http://www.springerlink.com/content/100432/), DOI 10.1007/s00271-011-0270-8.
+    site_name = Loxton
+    site_pi = Robert Stevens and Cacilia Ewenz
+    soil = loamy sand (0 - 50cm), sandy loam (50 - 85cm), sandy clay loam (85 - 170cm)
+    source = 10m flux tower plus array of soil temperature and moisture sensors
+    time_step = 30
+    time_zone = Australia/Adelaide
+    title = Flux tower data set from the Loxton site for the time 19/08/2008 to 09/06/2009
+    tower_height = 10m
+    vegetation = Almond orchard, 5.5 m canopy height
+[Variables]
+    [[AGC_IRGA]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Li-7500
+            long_name = IRGA automatic gain control value
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = agc_Avg
+            sheet = slow_flux
+    [[AH_HMP_10m]]
+        [[[Attr]]]
+            height = 10m
+            instrument = HMP45A
+            long_name = Absolute humidity
+            standard_name = mass_concentration_of_water_vapor_in_air
+            statistic_type = average
+            units = g/m^3
+        [[[xl]]]
+            name = h2o_hmp_mean
+            sheet = slow_flux
+    [[AH_IRGA_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Li-7500
+            long_name = Absolute humidity
+            standard_name = mass_concentration_of_water_vapor_in_air
+            statistic_type = average
+            units = g/m^3
+        [[[xl]]]
+            name = h2o_Avg
+            sheet = slow_flux
+    [[AH_IRGA_Sd]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Li-7500
+            long_name = Absolute humidity
+            statistic_type = standard_deviation
+            units = g/m^3
+        [[[xl]]]
+            name = stdev_h2o
+            sheet = slow_flux
+    [[CO2_IRGA_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Li-7500
+            long_name = CO2 concentration
+            standard_name = mass_concentration_of_carbon_dioxide_in_air
+            statistic_type = average
+            units = mg/m^3
+        [[[xl]]]
+            name = CO2_mean_corr
+            sheet = slow_flux
+    [[CO2_IRGA_Sd]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Li-7500
+            long_name = CO2 concentration
+            statistic_type = standard_deviation
+            units = mg/m^3
+        [[[xl]]]
+            name = stdev_co2
+            sheet = slow_flux
+    [[Diag_IRGA]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Li-7500
+            long_name = IRGA diagnostic value
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = irga_warnings
+            sheet = slow_flux
+    [[Diag_SONIC]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Sonic diagnostic value
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = csat_warnings
+            sheet = slow_flux
+    [[Fco2_EP]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3,Li-7500
+            long_name = CO2 flux
+            standard_name = surface_upward_mole_flux_of_carbon_dioxide
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = co2_flux
+            sheet = eddy_pro
+    [[Fco2_EP_QC]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3,Li-7500
+            long_name = CO2 flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_co2_flux
+            sheet = eddy_pro
+    [[Fe_EP]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3,Li-7500
+            long_name = Latent heat flux
+            standard_name = surface_upward_latent_heat_flux
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = LE
+            sheet = eddy_pro
+    [[Fe_EP_QC]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3,Li-7500
+            long_name = Latent heat flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_LE
+            sheet = eddy_pro
+    [[Fg_10cma]]
+        [[[Attr]]]
+            height = -0.1m
+            instrument = Middleton CN3
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = shf_cn3_Avg(1)
+            sheet = slow_flux
+    [[Fg_10cmb]]
+        [[[Attr]]]
+            height = -0.1m
+            instrument = Middleton CN3
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = shf_cn3_Avg(2)
+            sheet = slow_flux
+    [[Fg_10cmc]]
+        [[[Attr]]]
+            height = -0.1m
+            instrument = Middleton CN3
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = shf_cn3_Avg(3)
+            sheet = slow_flux
+    [[Fg_10cmd]]
+        [[[Attr]]]
+            height = -0.1m
+            instrument = Middleton CN3
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = shf_cn3_Avg(4)
+            sheet = slow_flux
+    [[Fg_10cme]]
+        [[[Attr]]]
+            height = -0.1m
+            instrument = Middleton CN3
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = shf_cn3_Avg(5)
+            sheet = slow_flux
+    [[Fg_10cmf]]
+        [[[Attr]]]
+            height = -0.1m
+            instrument = Middleton CN3
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = shf_cn3_Avg(6)
+            sheet = slow_flux
+    [[Fg_10cmg]]
+        [[[Attr]]]
+            height = -0.1m
+            instrument = Hukseflux self calibrating
+            long_name = Ground heat flux
+            standard_name = downward_heat_flux_at_ground_level_in_soil
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = hfp01sc_Avg
+            sheet = slow_flux
+    [[Fh_EP]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Sensible heat flux
+            standard_name = surface_upward_sensible_heat_flux
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = H
+            sheet = eddy_pro
+    [[Fh_EP_QC]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Sensible heat flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_H
+            sheet = eddy_pro
+    [[Fld]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Kipp and Zonen CNR1
+            long_name = Down-welling longwave radiation
+            standard_name = surface_downwelling_longwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rl_downwell_Avg
+            sheet = slow_flux
+    [[Flu]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Kipp and Zonen CNR1
+            long_name = Up-welling longwave radiation
+            standard_name = surface_upwelling_longwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rl_upwell_Avg
+            sheet = slow_flux
+    [[Fm_EP]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Momentum flux
+            standard_name = magnitude_of_surface_downward_stress
+            statistic_type = average
+            units = kg/m/s^2
+        [[[xl]]]
+            name = Tau
+            sheet = eddy_pro
+    [[Fm_EP_QC]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Momentum flux EddyPro QC flag
+            statistic_type = average
+            units = 1
+        [[[xl]]]
+            name = qc_Tau
+            sheet = eddy_pro
+    [[Fsd]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Kipp and Zonen CNR1
+            long_name = Down-welling shortwave radiation
+            standard_name = surface_downwelling_shortwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rs_downwell_Avg
+            sheet = slow_flux
+    [[Fsu]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Kipp and Zonen CNR1
+            long_name = Up-welling shortwave radiation
+            standard_name = surface_upwelling_shortwave_flux_in_air
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = Rs_upwell_Avg
+            sheet = slow_flux
+    [[Irrigation]]
+        [[[Attr]]]
+            height = 0m
+            instrument = sprinkler
+            long_name = Irrigation, 30 minute total
+            statistic_type = average
+            units = mm
+        [[[xl]]]
+            name = Irrigation
+            sheet = extra
+    [[PAR]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Li190SB
+            long_name = Photosynthetically active radiation
+            standard_name = surface_downwelling_photosynthetic_photon_flux_in_air
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = par_Avg
+            sheet = slow_flux
+    [[Precip]]
+        [[[Attr]]]
+            height = 5.5m
+            instrument = TE525MM
+            long_name = Rainfall
+            standard_name = thickness_of_rainfall_amount
+            statistic_type = sum
+            units = mm
+        [[[xl]]]
+            name = precip_Tot
+            sheet = slow_flux
+    [[Sco2_profile]]
+        [[[Attr]]]
+            height = 0.5m to 10m
+            instrument = None
+            long_name = CO2 flux
+            standard_name = surface_upward_mole_flux_of_carbon_dioxide
+            statistic_type = average
+            units = umol/m^2/s
+        [[[xl]]]
+            name = Fc_profile
+            sheet = dummy
+    [[Sws_005cm]]
+        [[[Attr]]]
+            height = -0.05m
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = Sws_616_005_Avg
+            sheet = slow_soil
+    [[Sws_015cm]]
+        [[[Attr]]]
+            height = -0.15m
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = Sws_616_015_Avg
+            sheet = slow_soil
+    [[Sws_045cm]]
+        [[[Attr]]]
+            height = -0.45m
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = Sws_616_045_Avg
+            sheet = slow_soil
+    [[Sws_070cm]]
+        [[[Attr]]]
+            height = -0.70m
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = Sws_616_070_Avg
+            sheet = slow_soil
+    [[Sws_100cm]]
+        [[[Attr]]]
+            height = -1.00m
+            instrument = Campbell Scientific CS616
+            long_name = Soil water content
+            standard_name = volume_fraction_of_condensed_water_in_soil
+            statistic_type = average
+            units = m^3/m^3
+        [[[xl]]]
+            name = Sws_616_100_Avg
+            sheet = slow_soil
+    [[T_CNR1]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CNR1
+            long_name = CNR1 body temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = T_cnr1_Avg
+            sheet = slow_flux
+    [[Ta_HMP_10m]]
+        [[[Attr]]]
+            height = 10m
+            instrument = HMP45A
+            long_name = Air temperature
+            standard_name = air_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = t_hmp_mean
+            sheet = slow_flux
+    [[Tpanel]]
+        [[[Attr]]]
+            instrument = Campbell Scientific CR5000 logger
+            long_name = Panel temperature at logger
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = panel_temp_Avg
+            sheet = slow_flux
+    [[Ts_100cm]]
+        [[[Attr]]]
+            height = -1.00m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_12
+            sheet = slow_flux
+    [[Ts_15cm]]
+        [[[Attr]]]
+            height = -0.15m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_9
+            sheet = slow_flux
+    [[Ts_2cma]]
+        [[[Attr]]]
+            height = -0.02m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_2
+            sheet = slow_flux
+    [[Ts_2cmb]]
+        [[[Attr]]]
+            height = -0.02m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_4
+            sheet = slow_flux
+    [[Ts_2cmc]]
+        [[[Attr]]]
+            height = -0.02m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_6
+            sheet = slow_flux
+    [[Ts_2cmd]]
+        [[[Attr]]]
+            height = -0.02m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_8
+            sheet = slow_flux
+    [[Ts_45cm]]
+        [[[Attr]]]
+            height = -0.45m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_10
+            sheet = slow_flux
+    [[Ts_6cma]]
+        [[[Attr]]]
+            height = -0.06m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_1
+            sheet = slow_flux
+    [[Ts_6cmb]]
+        [[[Attr]]]
+            height = -0.06m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_3
+            sheet = slow_flux
+    [[Ts_6cmc]]
+        [[[Attr]]]
+            height = -0.06m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_5
+            sheet = slow_flux
+    [[Ts_6cmd]]
+        [[[Attr]]]
+            height = -0.06m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_7
+            sheet = slow_flux
+    [[Ts_70cm]]
+        [[[Attr]]]
+            height = -0.70m
+            instrument = Campbell Scientific 105T
+            long_name = Soil temperature
+            standard_name = soil_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Tsoil_avg_11
+            sheet = slow_flux
+    [[Tv_SONIC_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Virtual temperature
+            standard_name = virtual_temperature
+            statistic_type = average
+            units = degC
+        [[[xl]]]
+            name = Ts_mean
+            sheet = slow_flux
+    [[Tv_SONIC_Sd]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Virtual temperature
+            statistic_type = standard_deviation
+            units = degC
+        [[[xl]]]
+            name = stdev_Ts
+            sheet = slow_flux
+    [[UxA]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3, Li-7500
+            long_name = Covariance of Ux and H2O
+            statistic_type = average
+            units = g/m^2/s
+        [[[xl]]]
+            name = cov_h2o_Ux
+            sheet = slow_flux
+    [[UxC]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3, Li-7500
+            long_name = Covariance of Ux and CO2
+            statistic_type = average
+            units = mg/m^2/s
+        [[[xl]]]
+            name = cov_co2_Ux
+            sheet = slow_flux
+    [[UxT]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Covariance of Ux and T
+            statistic_type = average
+            units = m.degC/s
+        [[[xl]]]
+            name = cov_Ts_Ux
+            sheet = slow_flux
+    [[UxUy]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Covariance of Ux and Uy
+            statistic_type = average
+            units = m^2/s^2
+        [[[xl]]]
+            name = cov_Ux_Uy
+            sheet = slow_flux
+    [[UxUz]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Covariance of Ux and Uz
+            statistic_type = average
+            units = m^2/s^2
+        [[[xl]]]
+            name = cov_Ux_Uz
+            sheet = slow_flux
+    [[Ux_SONIC_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Longitudinal wind velocity component, sonic coordinates
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = Ux_Avg
+            sheet = slow_flux
+    [[Ux_SONIC_Sd]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Longitudinal wind velocity component, sonic coordinates
+            statistic_type = standard_deviation
+            units = m/s
+        [[[xl]]]
+            name = stdev_Ux
+            sheet = slow_flux
+    [[UyA]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3, Li-7500
+            long_name = Covariance of Uy and H2O
+            statistic_type = average
+            units = g/m^2/s
+        [[[xl]]]
+            name = cov_h2o_Uy
+            sheet = slow_flux
+    [[UyC]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3, Li-7500
+            long_name = Covariance of Uy and CO2
+            statistic_type = average
+            units = mg/m^2/s
+        [[[xl]]]
+            name = cov_co2_Uy
+            sheet = slow_flux
+    [[UyT]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Covariance of Uy and T
+            statistic_type = average
+            units = m.degC/s
+        [[[xl]]]
+            name = cov_Ts_Uy
+            sheet = slow_flux
+    [[UyUz]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Covariance of Uy and Uz
+            statistic_type = average
+            units = m^2/s^2
+        [[[xl]]]
+            name = cov_Uy_Uz
+            sheet = slow_flux
+    [[Uy_SONIC_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Lateral wind velocity component, sonic coordinates
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = Uy_Avg
+            sheet = slow_flux
+    [[Uy_SONIC_Sd]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Lateral wind velocity component, sonic coordinates
+            statistic_type = standard_deviation
+            units = m/s
+        [[[xl]]]
+            name = stdev_Uy
+            sheet = slow_flux
+    [[UzA]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3, Li-7500
+            long_name = Covariance of Uz and H2O
+            statistic_type = average
+            units = g/m^2/s
+        [[[xl]]]
+            name = cov_h2o_Uz
+            sheet = slow_flux
+    [[UzC]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3, Li-7500
+            long_name = Covariance of Uz and CO2
+            statistic_type = average
+            units = mg/m^2/s
+        [[[xl]]]
+            name = cov_co2_Uz
+            sheet = slow_flux
+    [[UzT]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Covariance of Uz and T
+            statistic_type = average
+            units = m.degC/s
+        [[[xl]]]
+            name = cov_Ts_Uz
+            sheet = slow_flux
+    [[Uz_SONIC_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Vertical wind velocity component, sonic coordinates
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = Uz_Avg
+            sheet = slow_flux
+    [[Uz_SONIC_Sd]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Vertical wind velocity component, sonic coordinates
+            statistic_type = standard_deviation
+            units = m/s
+        [[[xl]]]
+            name = stdev_Uz
+            sheet = slow_flux
+    [[Vbat]]
+        [[[Attr]]]
+            instrument = Campbell Scientific CR5000 logger
+            long_name = Battery voltage at logger
+            statistic_type = average
+            units = V
+        [[[xl]]]
+            name = batt_volt_Avg
+            sheet = slow_flux
+    [[Wd_034B_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = WindSet 034B
+            long_name = Wind direction
+            standard_name = wind_from_direction
+            statistic_type = average
+            units = degrees
+        [[[xl]]]
+            name = 034B_dir_avg
+            sheet = slow_flux
+    [[Wd_SONIC_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Wind direction
+            standard_name = wind_from_direction
+            statistic_type = average
+            units = degrees
+        [[[xl]]]
+            name = wnd_dir_compass
+            sheet = slow_flux
+    [[Ws_034B_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = WindSet 034B
+            long_name = Wind speed
+            standard_name = wind_speed
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = 034B_spd_avg
+            sheet = slow_flux
+    [[Ws_SONIC_Av]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Wind speed
+            standard_name = wind_speed
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = wnd_spd
+            sheet = slow_flux
+    [[ps]]
+        [[[Attr]]]
+            height = 10m
+            instrument = Li7500
+            long_name = Surface air pressure
+            standard_name = surface_air_pressure
+            statistic_type = average
+            units = kPa
+        [[[xl]]]
+            name = press_mean
+            sheet = slow_flux
+    [[ps_CS100]]
+        [[[Attr]]]
+            height = 1.20m
+            instrument = CS100
+            long_name = Surface air pressure
+            standard_name = surface_air_pressure
+            statistic_type = average
+            units = hPa
+        [[[xl]]]
+            name = atm_press_Avg
+            sheet = slow_flux
+    [[rad_diffuse]]
+        [[[Attr]]]
+            height = 10m
+            instrument = BF3/Delta-T Devices
+            long_name = diffuse radiation
+            statistic_average = average
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = diffuse_rad_Avg
+            sheet = slow_flux
+    [[rad_global]]
+        [[[Attr]]]
+            height = 10m
+            instrument = BF3/Delta-T Devices
+            long_name = global radiation
+            statistic_type = average
+            units = W/m^2
+        [[[xl]]]
+            name = global_rad_Avg
+            sheet = slow_flux
+    [[ustar_EP]]
+        [[[Attr]]]
+            height = 10m
+            instrument = CSAT3
+            long_name = Friction velocity
+            statistic_type = average
+            units = m/s
+        [[[xl]]]
+            name = u*
+            sheet = eddy_pro

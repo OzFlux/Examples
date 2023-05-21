@@ -1,0 +1,31 @@
+level = batch
+[Options]
+    levels = L1,L2,L3,concatenate,climatology,cpd_barr,cpd_mchugh,cpd_mcnew,mpt,L4,L5,L6
+[Levels]
+    [[L1]]
+        0 = ../Examples/Calperum/controlfiles/OzFlux/L1.txt
+        1 = ../Examples/Calperum/controlfiles/EddyPro/L1.txt
+    [[L2]]
+        0 = ../Examples/Calperum/controlfiles/OzFlux/L2.txt
+        1 = ../Examples/Calperum/controlfiles/EddyPro/L2.txt
+    [[L3]]
+        0 = ../Examples/Calperum/controlfiles/OzFlux/L3.txt
+        1 = ../Examples/Calperum/controlfiles/EddyPro/L3.txt
+    [[concatenate]]
+        0 = ../Examples/Calperum/controlfiles/concatenate.txt
+    [[climatology]]
+        0 = ../Examples/Calperum/controlfiles/climatology.txt
+    [[cpd_mchugh]]
+        0 = ../Examples/Calperum/controlfiles/cpd_mchugh.txt
+    [[cpd_mcnew]]
+        0 = ../Examples/Calperum/controlfiles/cpd_mcnew.txt
+    [[cpd_barr]]
+        0 = ../Examples/Calperum/controlfiles/cpd_barr.txt
+    [[mpt]]
+        0 = ../Examples/Calperum/controlfiles/mpt.txt
+    [[L4]]
+        0 = ../Examples/Calperum/controlfiles/L4.txt
+    [[L5]]
+        0 = ../Examples/Calperum/controlfiles/L5.txt
+    [[L6]]
+        0 = ../Examples/Calperum/controlfiles/L6.txt

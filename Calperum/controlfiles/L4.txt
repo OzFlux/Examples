@@ -1,0 +1,225 @@
+level = L4
+[Files]
+    plot_path = ../Examples/Calperum/Plots/
+    file_path = ../Examples/Calperum/Data/Portal/
+    in_filename = Calperum_L3.nc
+    out_filename = Calperum_L4.nc
+    aws = ../Examples/Calperum/Data/AWS/Calperum_AWS.nc
+    access = ../Examples/Calperum/Data/ACCESS/Calperum_ACCESS.nc
+    era5 = ../Examples/Calperum/Data/ERA5/Calperum_ERA5.nc
+    climatology = ../Examples/Calperum/Data/Portal/Calperum_L3_Climatology.xls
+[Options]
+    MaxGapInterpolate = 3
+[GUI]
+    [[GapFillFromAlternate]]
+        auto_complete = yes
+        end_date = ""
+        min_percent = 30
+        number_days = 90
+        number_months = 3
+        overwrite = no
+        period_option = days
+        show_all = no
+        show_plots = no
+        start_date = ""
+[Drivers]
+    [[AH]]
+        [[[GapFillFromAlternate]]]
+            [[[[AH_aws]]]]
+                source = AWS
+            [[[[AH_access]]]]
+                source = ACCESS
+            [[[[AH_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[AH_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = AH,AH_aws,AH_access,AH_era5,AH_cli
+    [[CO2]]
+        [[[GapFillFromClimatology]]]
+            [[[[CO2_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = CO2,CO2_cli
+    [[Fa]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fa_access]]]]
+                source = ACCESS
+            [[[[Fa_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Fa_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fa,Fa_access,Fa_era5,Fa_cli
+    [[Fg]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fg_access]]]]
+                source = ACCESS
+            [[[[Fg_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Fg_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fg,Fg_access,Fg_era5,Fg_cli
+    [[Fld]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fld_access]]]]
+                source = ACCESS
+            [[[[Fld_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Fld_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fld,Fld_access,Fld_era5,Fld_cli
+    [[Flu]]
+        [[[GapFillFromAlternate]]]
+            [[[[Flu_access]]]]
+                source = ACCESS
+            [[[[Flu_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Flu_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Flu,Flu_access,Flu_era5,Flu_cli
+    [[Fn]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fn_access]]]]
+                source = ACCESS
+            [[[[Fn_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Fn_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fn,Fn_access,Fn_era5,Fn_cli
+    [[Fsd]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fsd_access]]]]
+                source = ACCESS
+            [[[[Fsd_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Fsd_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fsd,Fsd_access,Fsd_era5,Fsd_cli
+    [[Fsu]]
+        [[[GapFillFromAlternate]]]
+            [[[[Fsu_access]]]]
+                source = ACCESS
+            [[[[Fsu_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Fsu_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Fsu,Fsu_access,Fsu_era5,Fsu_cli
+    [[ps]]
+        [[[GapFillFromAlternate]]]
+            [[[[ps_aws]]]]
+                source = AWS
+            [[[[ps_access]]]]
+                source = ACCESS
+            [[[[ps_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[ps_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = ps,ps_aws,ps_access,ps_era5,ps_cli
+    [[Sws]]
+        [[[GapFillFromAlternate]]]
+            [[[[Sws_access]]]]
+                source = ACCESS
+                lag = no
+            [[[[Sws_era5]]]]
+                source = ERA5
+                lag = no
+        [[[MergeSeries]]]
+            source = Sws,Sws_access,Sws_era5
+    [[Ta]]
+        [[[GapFillFromAlternate]]]
+            [[[[Ta_aws]]]]
+                source = AWS
+            [[[[Ta_access]]]]
+                source = ACCESS
+            [[[[Ta_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Ta_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Ta,Ta_aws,Ta_access,Ta_era5,Ta_cli
+    [[Ts]]
+        [[[GapFillFromAlternate]]]
+            [[[[Ts_access]]]]
+                source = ACCESS
+            [[[[Ts_era5]]]]
+                source = ERA5
+        [[[GapFillFromClimatology]]]
+            [[[[Ts_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Ts,Ts_access,Ts_era5,Ts_cli
+    [[Ws]]
+        [[[GapFillFromAlternate]]]
+            [[[[Ws_aws]]]]
+                source = AWS
+                fit = ols_thru0
+                lag = no
+            [[[[Ws_access]]]]
+                source = ACCESS
+                fit = ols_thru0
+                lag = no
+            [[[[Ws_era5]]]]
+                source = ERA5
+                fit = ols_thru0
+                lag = no
+        [[[GapFillFromClimatology]]]
+            [[[[Ws_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Ws,Ws_aws,Ws_access,Ws_era5,Ws_cli
+    [[Wd]]
+        [[[GapFillFromAlternate]]]
+            [[[[Wd_aws]]]]
+                source = AWS
+                fit = replace
+                lag = no
+            [[[[Wd_access]]]]
+                source = ACCESS
+                fit = replace
+                lag = no
+            [[[[Wd_era5]]]]
+                source = ERA5
+                fit = replace
+                lag = no
+        [[[GapFillFromClimatology]]]
+            [[[[Wd_cli]]]]
+                method = interpolated daily
+        [[[MergeSeries]]]
+            source = Wd,Wd_aws,Wd_access,Wd_era5,Wd_cli
+    [[Precip]]
+        [[[GapFillFromAlternate]]]
+            [[[[Precip_aws]]]]
+                source = AWS
+                fit = replace
+                lag = no
+            [[[[Precip_access]]]]
+                source = ACCESS
+                fit = replace
+                lag = no
+            [[[[Precip_era5]]]]
+                source = ERA5
+                fit = replace
+                lag = no
+        [[[MergeSeries]]]
+            source = Precip,Precip_aws,Precip_access,Precip_era5
+        [[[RangeCheck]]]
+            lower = 0.0
+            upper = 50.0

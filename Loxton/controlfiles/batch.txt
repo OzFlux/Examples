@@ -1,0 +1,26 @@
+level = batch
+[Options]
+    levels = L1,L2,L3,climatology,cpd_mchugh,cpd_mcnew,cpd_barr,mpt,L4,L5,L6
+[Levels]
+    [[L1]]
+        0 = ../Examples/Loxton/controlfiles/L1.txt
+    [[L2]]
+        0 = ../Examples/Loxton/controlfiles/L2.txt
+    [[L3]]
+        0 = ../Examples/Loxton/controlfiles/L3.txt
+    [[climatology]]
+        0 = ../Examples/Loxton/controlfiles/climatology.txt
+    [[cpd_mchugh]]
+        0 = ../Examples/Loxton/controlfiles/cpd_mchugh.txt
+    [[cpd_mcnew]]
+        0 = ../Examples/Loxton/controlfiles/cpd_mcnew.txt
+    [[cpd_barr]]
+        0 = ../Examples/Loxton/controlfiles/cpd_barr.txt
+    [[mpt]]
+        0 = ../Examples/Loxton/controlfiles/mpt.txt
+    [[L4]]
+        0 = ../Examples/Loxton/controlfiles/L4.txt
+    [[L5]]
+        0 = ../Examples/Loxton/controlfiles/L5.txt
+    [[L6]]
+        0 = ../Examples/Loxton/controlfiles/L6.txt

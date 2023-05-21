@@ -1,0 +1,15 @@
+level = concatenate
+[Options]
+    MaxGapInterpolate = 0
+[Files]
+    plot_path = ../Examples/CumberlandPlain/Plots/
+    [[Out]]
+        ncFileName = ../Examples/CumberlandPlain/Data/Tower/CumberlandPlain_L3.nc
+    [[In]]
+        0 = ../Examples/CumberlandPlain/Data/Tower/2014/CumberlandPlain_2014_L3.nc
+        1 = ../Examples/CumberlandPlain/Data/Tower/2015/CumberlandPlain_2015_L3.nc
+        2 = ../Examples/CumberlandPlain/Data/Tower/2016/CumberlandPlain_2016_L3.nc
+        3 = ../Examples/CumberlandPlain/Data/Tower/2017/CumberlandPlain_2017_L3.nc
+        4 = ../Examples/CumberlandPlain/Data/Tower/2018/CumberlandPlain_2018_L3.nc
+        5 = ../Examples/CumberlandPlain/Data/Tower/2019/CumberlandPlain_2019_L3.nc
+        6 = ../Examples/CumberlandPlain/Data/Tower/2020/CumberlandPlain_2020_L3.nc

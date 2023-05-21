@@ -1,0 +1,109 @@
+level = nc2csv_ecostress
+[Files]
+    file_path = ../Examples/Calperum/Data/Portal/
+    in_filename = Calperum_L6.nc
+    out_filename = Calperum_ECOSTRESS.csv
+[General]
+    Altitude = 62m
+    CanopyHeight = 3m eucalyptus, 0.7 grass
+    Citation = Calperum Tech (2013 ) Calperum Chowilla OzFlux tower site OzFlux: Australian and New Zealand Flux Research and Monitoring hdl: 102.100.100/14236
+    DataPolicy = OzFlux (http://ozflux.its.monash.edu.au/ecosystem/site/licenceinfo.jspx)
+    DataURL = http://data.ozflux.org.au
+    FluxNetID = AU-Cpr
+    Institution = University of Adelaide
+    LandCover = Mallee
+    LandUse = Regenerating native vegetation
+    Latitude = -34.00206
+    LicenseType = CC BY 4.0
+    LicenseURL = https://creativecommons.org/licenses/by/4.0/
+    Longitude = 140.58912
+    MeasurementHeight = 20m
+    MetadataURL = http://www.ozflux.org.au/monitoringsites/<site_name>/index.html
+    PIEmail = wayne.meyer@adelaide.edu.au
+    PIName = Wayne Meyer
+    SiteName = Calperum
+    SoilType = Reddish brown, yellowish red, loamy sand, free grain structure; low organic matter, loose consistence; pH 6
+    SWCDepth = 10cm
+    TaDepth = 2m
+    TSDepth = 10cm
+[Variables]
+    [[LHF]]
+        name = Fe
+        units = W/m2
+        format = 0
+    [[SHF]]
+        name = Fh
+        units = W/m2
+        format = 0
+    [[GHF]]
+        name = Fg
+        units = W/m2
+        format = 0
+    [[GPP]]
+        name = GPP_SOLO
+        units = gC/m2/s
+        format = 0.00E+00
+    [[Ta]]
+        name = Ta
+        units = C
+        format = 0.00
+    [[T2]]
+        name = ""
+        units = C
+        format = 0.00
+    [[VPD]]
+        name = VPD
+        units = kPa
+        format = 0.00
+    [[Rn]]
+        name = Fn
+        units = W/m2
+        format = 0
+    [[RdS]]
+        name = Fsd
+        units = W/m2
+        format = 0
+    [[RdL]]
+        name = Fld
+        units = W/m2
+        format = 0
+    [[RuS]]
+        name = Fsu
+        units = W/m2
+        format = 0
+    [[RuL]]
+        name = Flu
+        units = W/m2
+        format = 0
+    [[PAR]]
+        name = ""
+        units = umol/m2/s
+        format = 0
+    [[PRESS]]
+        name = ps
+        units = kPa
+        format = 0.00
+    [[PREC]]
+        name = Precip
+        units = mm
+        format = 0.00
+    [[Rh]]
+        name = RH
+        units = %
+        format = 0.0
+    [[Wspd]]
+        name = Ws
+        units = m/s
+        format = 0.00
+    [[Wdir]]
+        name = Wd
+        units = degrees
+        format = 0
+    [[Ts]]
+        name = Ts
+        units = C
+        format = 0.00
+    [[SWC]]
+        name = Sws
+        units = % volmetric
+        format = 0.00
