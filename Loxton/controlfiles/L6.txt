@@ -28,7 +28,7 @@ Fund.'''
         training = 500
 [Options]
     Fsd_threshold = 10
-    PlotRawData = Yes
+    PlotRawData = No
 [EcosystemRespiration]
     [[ER_SOLO]]
         [[[ERUsingSOLO]]]
@@ -80,3 +80,6 @@ Fund.'''
     [[GPP_LL]]
         NEE = NEE_LL
         ER = ER_LL
+[EvapoTranspiration]
+    [[ET]]
+        Fe = Fe
